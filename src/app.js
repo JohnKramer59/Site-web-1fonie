@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
 
-/* Pages à créer plus tard */
 function Services() {
   return <div className="container mx-auto px-6 py-16">Page Services</div>;
 }
@@ -21,7 +20,7 @@ function PolitiqueConfidentialite() {
   return <div className="container mx-auto px-6 py-16">Politique de confidentialité</div>;
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -41,5 +40,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
