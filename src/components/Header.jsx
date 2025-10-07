@@ -6,12 +6,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-blue text-white shadow">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src="/logo.png" alt="1FONIE" className="h-10" />
           </Link>
-
-          {/* Liens de navigation (routes REACT, pas d’ancres) */}
           <div className="hidden md:flex space-x-6 text-sm font-medium">
             <Link to="/services" className="hover:opacity-80 transition">Services</Link>
             <Link to="/contact" className="hover:opacity-80 transition">Contact</Link>
