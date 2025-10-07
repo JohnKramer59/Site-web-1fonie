@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Utilitaires brand utiles partout */
-.bg-gradient-brand { background-image: linear-gradient(135deg, #1B3E91 0%, #2C6EE7 100%); }
-.bg-brand-soft { background-color: #E9F1FF; }
-.text-brand-dark { color: #1B3E91; }
-.text-brand { color: #2C6EE7; }
+/* debug fond pour voir le header */
+html, body, #root { height: 100%; }
+body { margin: 0; background: #f5f7fb; }
