@@ -1,30 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
-import Services from "./pages/Services.jsx";
-import Blog from "./pages/Blog.jsx";
-import Contact from "./pages/Contact.jsx";
-import MentionsLegales from "./pages/MentionsLegales.jsx";
+
+function Page({ title }) {
+  return (
+    <div className="p-6 max-w-5xl mx-auto">
+      <h1 className="text-2xl font-semibold">{title}</h1>
+      <p className="mt-2 text-gray-600">Contenu de démonstration.</p>
+    </div>
+  );
+}
 
 export default function App() {
   return (
-    <Router>
-      {/* padding-top pour compenser le header FIXE */}
-      <div className="flex flex-col min-h-screen pt-20">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      <Header />
+      <main className="pt-20"> {/* espace sous header fixed */}
+        <Routes>
+          <Route path="/" element={<Page title="Accueil" />} />
+          <Route path="/services" element={<Page title="Services" />} />
+          <Route path="/contact" element={<Page title="Contact" />} />
+          <Route path="/blog" element={<Page title="Blog" />} />
+          <Route path="/mentions-legales" element={<Page title="Mentions légales" />} />
+        </Routes>
+      </main>
+    </>
   );
 }
