@@ -11,7 +11,8 @@ import MentionsLegales from "./pages/MentionsLegales.jsx";
 export default function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      {/* padding-top pour compenser le header FIXE */}
+      <div className="flex flex-col min-h-screen pt-20">
         <Header />
         <main className="flex-grow">
           <Routes>
