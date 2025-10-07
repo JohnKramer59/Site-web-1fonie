@@ -76,7 +76,7 @@ export default function Services() {
             <img src="/gsm.jpg" alt="Service GSM" className="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" />
 
             <p className="text-gray-700 mb-6">
-              Boostez la mobilité et la performance avec des offres pro, flexibles et évolutives.
+              Boostez la mobilité et la performance de votre entreprise grâce à nos solutions de téléphonie mobile professionnelles, flexibles et évolutives.
             </p>
 
             <ul className="space-y-2 mb-8 text-gray-700">
