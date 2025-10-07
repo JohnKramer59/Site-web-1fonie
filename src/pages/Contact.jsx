@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+const EMAILJS_SERVICE_ID = "service_nvtel";
+const EMAILJS_TEMPLATE_ID = "template_ervf3dm";
+const EMAILJS_PUBLIC_KEY = "Q3c8kN9N5pircpp1R";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -7,54 +11,55 @@ export default function Contact() {
     company: "",
     phone: "",
     service_type: "",
-    urgency: "",
+    urgency: "medium",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // sécurise les IDs contre les espaces invisibles
+    const service_id = EMAILJS_SERVICE_ID.trim();
+    const template_id = EMAILJS_TEMPLATE_ID.trim();
+    const user_id = EMAILJS_PUBLIC_KEY.trim();
+
     try {
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          service_id: 'service_nvtel',       // 🔹 Remplace par ton Service ID
-          template_id: 'template_ervf3dm',         // 🔹 Remplace par ton Template ID
-          user_id: 'Q3c8kN9N5pircpp1R',      // 🔹 Remplace par ta clé publique
-          template_params: {
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            phone: formData.phone,
-            service_type: formData.service_type,
-            urgency: formData.urgency,
-            message: formData.message,
-          },
+          service_id,
+          template_id,
+          user_id,
+          template_params: { ...formData },
         }),
       });
 
-      if (response.ok) {
-        setSubmitStatus({ type: "success", message: "Message envoyé avec succès !" });
+      if (res.ok) {
+        setSubmitStatus({ type: "success", message: "Votre demande a été envoyée avec succès ✅" });
         setFormData({
           name: "",
           email: "",
           company: "",
           phone: "",
           service_type: "",
-          urgency: "",
+          urgency: "medium",
           message: "",
         });
+      } else if (res.status === 404) {
+        setSubmitStatus({
+          type: "error",
+          message: "IDs EmailJS introuvables. Vérifie service_id, template_id et user_id EXACTS.",
+        });
       } else {
-        setSubmitStatus({ type: "error", message: "Erreur lors de l’envoi du message." });
+        setSubmitStatus({ type: "error", message: "Erreur lors de l’envoi. Réessayez." });
       }
     } catch {
       setSubmitStatus({ type: "error", message: "Erreur réseau. Réessayez plus tard." });
@@ -65,7 +70,7 @@ export default function Contact() {
 
   return (
     <main>
-      {/* SECTION CONTACT INFO */}
+      {/* Contact Info */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
@@ -74,68 +79,20 @@ export default function Contact() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <InfoCard
-              color="blue"
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              }
-              title="Téléphone"
-              text="03 20 49 29 00"
-            />
-            <InfoCard
-              color="green"
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              }
-              title="Email"
-              text="contact@1fonie.fr"
-            />
-            <InfoCard
-              color="purple"
-              icon={
-                <>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </>
-              }
-              title="Adresse"
-              text="France entière"
-            />
+            <InfoCard title="Téléphone" text="03 20 49 29 00" color="blue" />
+            <InfoCard title="Email" text="contact@1fonie.fr" color="green" />
+            <InfoCard title="Adresse" text="France entière" color="purple" />
           </div>
         </div>
       </section>
 
-      {/* FORMULAIRE */}
+      {/* FORMULAIRE GLOBAL */}
       <section className="py-20 bg-customblue2">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-customblue mb-4">
-                Demandez votre Devis Gratuit
-              </h2>
-              <p className="text-xl text-customblue">
-                Remplissez ce formulaire et nous vous recontacterons dans les 24h
-              </p>
+              <h2 className="text-4xl font-bold text-customblue mb-4">Demandez votre Devis Gratuit</h2>
+              <p className="text-xl text-customblue">Réponse sous 24h ouvrées</p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-8">
@@ -154,12 +111,12 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <Input label="Nom complet *" name="name" value={formData.name} onChange={handleInputChange} required />
-                  <Input label="Email professionnel *" name="email" type="email" value={formData.email} onChange={handleInputChange} required />
+                  <Input label="Email professionnel *" type="email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <Input label="Entreprise *" name="company" value={formData.company} onChange={handleInputChange} required />
-                  <Input label="Téléphone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} />
+                  <Input label="Téléphone" type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -218,8 +175,8 @@ export default function Contact() {
                 </div>
 
                 <div className="text-center text-sm text-gray-500">
-                  <p>🛡️ Vos données sont sécurisées et ne seront jamais partagées</p>
-                  <p>⏰ Réponse garantie sous 24h en jours ouvrés</p>
+                  <p>🛡️ Données non partagées</p>
+                  <p>⏰ Réponse sous 24h</p>
                 </div>
               </form>
             </div>
@@ -230,7 +187,6 @@ export default function Contact() {
   );
 }
 
-/* === Composants internes simplifiés === */
 function Input({ label, ...props }) {
   return (
     <div>
@@ -239,7 +195,6 @@ function Input({ label, ...props }) {
     </div>
   );
 }
-
 function Textarea({ label, ...props }) {
   return (
     <div>
@@ -248,7 +203,6 @@ function Textarea({ label, ...props }) {
     </div>
   );
 }
-
 function Select({ label, options = [], ...props }) {
   return (
     <div>
@@ -261,13 +215,12 @@ function Select({ label, options = [], ...props }) {
     </div>
   );
 }
-
-function InfoCard({ color, icon, title, text }) {
+function InfoCard({ title, text, color }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className={`bg-${color}-100 p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}>
+      <div className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}>
         <svg className={`w-6 h-6 text-${color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          {icon}
+          <circle cx="12" cy="12" r="9" strokeWidth="2" />
         </svg>
       </div>
       <h3 className="font-bold mb-2">{title}</h3>
