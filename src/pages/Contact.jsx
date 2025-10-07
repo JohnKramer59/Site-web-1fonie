@@ -10,7 +10,7 @@ const colorMap = {
   purple: { bg: "bg-purple-100", text: "text-purple-600" },
 };
 
-function Contact() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,10 +48,7 @@ function Contact() {
       });
 
       if (res.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Votre demande a été envoyée avec succès ✅",
-        });
+        setSubmitStatus({ type: "success", message: "Votre demande a été envoyée avec succès ✅" });
         setFormData({
           name: "",
           email: "",
@@ -64,20 +61,13 @@ function Contact() {
       } else if (res.status === 404) {
         setSubmitStatus({
           type: "error",
-          message:
-            "IDs EmailJS introuvables. Vérifie service_id, template_id et user_id EXACTS.",
+          message: "IDs EmailJS introuvables. Vérifie service_id, template_id et user_id EXACTS.",
         });
       } else {
-        setSubmitStatus({
-          type: "error",
-          message: "Erreur lors de l’envoi. Réessayez.",
-        });
+        setSubmitStatus({ type: "error", message: "Erreur lors de l’envoi. Réessayez." });
       }
     } catch {
-      setSubmitStatus({
-        type: "error",
-        message: "Erreur réseau. Réessayez plus tard.",
-      });
+      setSubmitStatus({ type: "error", message: "Erreur réseau. Réessayez plus tard." });
     } finally {
       setIsSubmitting(false);
     }
@@ -106,9 +96,7 @@ function Contact() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Demandez votre Devis Gratuit
-              </h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Demandez votre Devis Gratuit</h2>
               <p className="text-xl text-gray-200">Réponse sous 24h ouvrées</p>
             </div>
 
@@ -127,38 +115,13 @@ function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Input
-                    label="Nom complet *"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <Input
-                    label="Email professionnel *"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
+                  <Input label="Nom complet *" name="name" value={formData.name} onChange={handleInputChange} required />
+                  <Input label="Email professionnel *" type="email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Input
-                    label="Entreprise *"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <Input
-                    label="Téléphone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                  />
+                  <Input label="Entreprise *" name="company" value={formData.company} onChange={handleInputChange} required />
+                  <Input label="Téléphone" type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -232,13 +195,8 @@ function Contact() {
 function Input({ label, ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <input
-        {...props}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-      />
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <input {...props} className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
     </div>
   );
 }
@@ -246,14 +204,8 @@ function Input({ label, ...props }) {
 function Textarea({ label, ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <textarea
-        {...props}
-        rows={5}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none"
-      />
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <textarea {...props} rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none" />
     </div>
   );
 }
@@ -261,17 +213,10 @@ function Textarea({ label, ...props }) {
 function Select({ label, options = [], ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <select
-        {...props}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-      >
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <select {...props} className="w-full px-4 py-3 border border-gray-300 rounded-lg">
         {options.map(([value, text]) => (
-          <option key={value} value={value}>
-            {text}
-          </option>
+          <option key={value} value={value}>{text}</option>
         ))}
       </select>
     </div>
@@ -282,15 +227,8 @@ function InfoCard({ title, text, color }) {
   const c = colorMap[color] || colorMap.blue;
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <div
-        className={`${c.bg} p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}
-      >
-        <svg
-          className={`w-6 h-6 ${c.text}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+      <div className={`${c.bg} p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}>
+        <svg className={`w-6 h-6 ${c.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="9" strokeWidth="2" />
         </svg>
       </div>
@@ -299,5 +237,3 @@ function InfoCard({ title, text, color }) {
     </div>
   );
 }
-
-export default Contact;
