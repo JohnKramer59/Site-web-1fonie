@@ -1,18 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
+import Home from "./pages/Home.jsx";
 import Services from "./pages/Services.jsx";
-// Contact passe par le wrapper index.js
 import Contact from "./pages/Contact";
-
-function Page({ title }) {
-  return (
-    <div className="px-6 py-10 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-semibold">{title}</h1>
-      <p className="mt-3 text-gray-600">Contenu de démonstration.</p>
-    </div>
-  );
-}
 
 export default function App() {
   return (
@@ -20,11 +11,11 @@ export default function App() {
       <Header />
       <main className="pt-20">
         <Routes>
-          <Route path="/" element={<Page title="Accueil" />} />
+          <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Page title="Blog" />} />
-          <Route path="/mentions-legales" element={<Page title="Mentions légales" />} />
+          <Route path="/blog" element={<div />} />
+          <Route path="/mentions-legales" element={<div />} />
         </Routes>
       </main>
     </>
