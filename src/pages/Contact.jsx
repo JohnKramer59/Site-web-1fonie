@@ -4,12 +4,6 @@ const EMAILJS_SERVICE_ID = "service_nvtel";
 const EMAILJS_TEMPLATE_ID = "template_ervf3dm";
 const EMAILJS_PUBLIC_KEY = "Q3c8kN9N5pircpp1R";
 
-const colorMap = {
-  blue: { bg: "bg-blue-100", text: "text-blue-600" },
-  green: { bg: "bg-green-100", text: "text-green-600" },
-  purple: { bg: "bg-purple-100", text: "text-purple-600" },
-};
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -92,12 +86,12 @@ export default function Contact() {
       </section>
 
       {/* FORMULAIRE GLOBAL */}
-      <section className="py-20" style={{ backgroundColor: "#0A2540" }}>
+      <section className="py-20 bg-customblue2">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">Demandez votre Devis Gratuit</h2>
-              <p className="text-xl text-gray-200">Réponse sous 24h ouvrées</p>
+              <h2 className="text-4xl font-bold text-customblue mb-4">Demandez votre Devis Gratuit</h2>
+              <p className="text-xl text-customblue">Réponse sous 24h ouvrées</p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-8">
@@ -162,7 +156,7 @@ export default function Contact() {
 
                 <div className="flex items-center space-x-3 mt-4">
                   <input type="checkbox" id="privacy" required />
-                  <label htmlFor="privacy" className="text-sm text-gray-700">
+                  <label htmlFor="privacy" className="text-sm text-gray-600">
                     J'accepte que mes données soient traitées dans le cadre de cette demande *
                   </label>
                 </div>
@@ -171,7 +165,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-8 py-4 bg-[#0A2540] text-white rounded-lg font-semibold text-lg ${
+                    className={`px-8 py-4 bg-customblue text-white rounded-lg font-semibold text-lg ${
                       isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >
@@ -200,7 +194,6 @@ function Input({ label, ...props }) {
     </div>
   );
 }
-
 function Textarea({ label, ...props }) {
   return (
     <div>
@@ -209,7 +202,6 @@ function Textarea({ label, ...props }) {
     </div>
   );
 }
-
 function Select({ label, options = [], ...props }) {
   return (
     <div>
@@ -222,13 +214,11 @@ function Select({ label, options = [], ...props }) {
     </div>
   );
 }
-
 function InfoCard({ title, text, color }) {
-  const c = colorMap[color] || colorMap.blue;
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className={`${c.bg} p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}>
-        <svg className={`w-6 h-6 ${c.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}>
+        <svg className={`w-6 h-6 text-${color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="9" strokeWidth="2" />
         </svg>
       </div>
