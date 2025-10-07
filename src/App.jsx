@@ -2,13 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from "./Home.jsx";
-
-function Services() { return <div className="container mx-auto px-6 py-16">Page Services</div>; }
-function Contact()  { return <div className="container mx-auto px-6 py-16">Page Contact</div>; }
-function Blog()     { return <div className="container mx-auto px-6 py-16">Page Blog</div>; }
-function MentionsLegales() { return <div className="container mx-auto px-6 py-16">Mentions légales</div>; }
-function PolitiqueConfidentialite() { return <div className="container mx-auto px-6 py-16">Politique de confidentialité</div>; }
+import Home from "./pages/Home.jsx";
+import Services from "./pages/Services.jsx";
+import Blog from "./pages/Blog.jsx";
+import Contact from "./pages/Contact.jsx";
+import MentionsLegales from "./pages/MentionsLegales.jsx";
 
 export default function App() {
   return (
@@ -19,10 +17,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
           </Routes>
         </main>
         <Footer />
