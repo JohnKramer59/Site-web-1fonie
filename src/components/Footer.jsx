@@ -1,14 +1,11 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-customblue-dark to-customblue text-gray-100 py-10 mt-12">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        {/* Bloc 1 - Identité */}
         <div>
           <h3 className="text-lg font-bold mb-3 text-white">1Fonie</h3>
           <p className="text-sm leading-relaxed">
@@ -16,8 +13,6 @@ function Footer() {
             Solutions sur mesure, support réactif et expertise certifiée.
           </p>
         </div>
-
-        {/* Bloc 2 - Liens rapides */}
         <div>
           <h3 className="text-lg font-bold mb-3 text-white">Liens rapides</h3>
           <ul className="space-y-2 text-sm">
@@ -32,8 +27,6 @@ function Footer() {
             <li><Link to="/politique-confidentialite">Politique de confidentialité</Link></li>
           </ul>
         </div>
-
-        {/* Bloc 3 - Contact & Réseaux */}
         <div>
           <h3 className="text-lg font-bold mb-3 text-white">Contact</h3>
           <ul className="space-y-2 text-sm">
@@ -44,20 +37,14 @@ function Footer() {
               <FaPhone /> <a href="tel:+33123456789">01 23 45 67 89</a>
             </li>
             <li className="flex items-center space-x-2">
-              <FaLinkedin /> <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
+              <FaLinkedin /> <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </li>
           </ul>
         </div>
       </div>
-
-      {/* Ligne de séparation */}
       <div className="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-200">
         &copy; {new Date().getFullYear()} 1Fonie. Tous droits réservés.
       </div>
     </footer>
   );
 }
-
-export default Footer;
