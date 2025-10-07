@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-// importe via le dossier pour utiliser le wrapper
+import Services from "./pages/Services.jsx";
+// Contact passe par le wrapper index.js créé précédemment
 import Contact from "./pages/Contact";
 
 function Page({ title }) {
@@ -20,7 +21,7 @@ export default function App() {
       <main className="pt-20">
         <Routes>
           <Route path="/" element={<Page title="Accueil" />} />
-          <Route path="/services" element={<Page title="Services" />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Page title="Blog" />} />
           <Route path="/mentions-legales" element={<Page title="Mentions légales" />} />
