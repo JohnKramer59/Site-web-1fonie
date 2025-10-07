@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Services from "./pages/Services.jsx";
-// Contact passe par le wrapper index.js créé précédemment
+// Contact passe par le wrapper index.js
 import Contact from "./pages/Contact";
 
 function Page({ title }) {
