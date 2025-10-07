@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* fond gradient séparé + z-index correct */}
-      <div className="absolute inset-0 bg-gradient-to-r from-customblue-dark to-customblue text-white" aria-hidden="true" />
+      {/* Remplace les hex ci-dessous par tes couleurs exactes */}
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-[#0A2540] to-[#00D4FF]"
+        aria-hidden="true"
+      />
       <nav className="relative z-10 text-white">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
