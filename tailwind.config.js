@@ -1,12 +1,12 @@
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
         customblue: {
-          DEFAULT: "#1E40AF", // couleur principale
-          dark: "#1E3A8A",    // couleur foncée du dégradé
+          DEFAULT: "#1E40AF",
+          dark: "#1E3A8A",
         },
       },
     },
