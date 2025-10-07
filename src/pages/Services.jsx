@@ -2,16 +2,15 @@ import React from "react";
 
 export default function Services() {
   const openServiceForm = (key) => {
-    // branche ton handler ici si besoin
     console.log("demande devis:", key);
   };
 
   return (
-    <main className="bg-soft-blue">
+    <main className="bg-white">
       {/* Titre */}
       <section className="py-16">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl font-bold text-[#1B3E91] mb-4">
+          <h1 className="text-4xl font-bold text-customblue mb-4">
             Nos Services Spécialisés
           </h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -25,7 +24,7 @@ export default function Services() {
       <section className="pb-20">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
           {/* Standards Téléphoniques */}
-          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
             <div className="flex items-center mb-6">
               <div className="bg-orange-100 p-4 rounded-lg mr-4">
                 <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,7 +32,7 @@ export default function Services() {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#1B3E91]">Standards Téléphoniques (Centrex)</h3>
+              <h3 className="text-2xl font-bold text-customblue">Standards Téléphoniques (Centrex)</h3>
             </div>
 
             <img
@@ -63,7 +62,7 @@ export default function Services() {
           </div>
 
           {/* Téléphonie Mobile */}
-          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
             <div className="flex items-center mb-6">
               <div className="bg-blue-100 p-4 rounded-lg mr-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -71,7 +70,7 @@ export default function Services() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M11 18h2" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#1B3E91]">Téléphonie Mobile</h3>
+              <h3 className="text-2xl font-bold text-customblue">Téléphonie Mobile</h3>
             </div>
 
             <img src="/gsm.jpg" alt="Service GSM" className="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" />
@@ -96,7 +95,7 @@ export default function Services() {
           </div>
 
           {/* Maintenance Informatique */}
-          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
             <div className="flex items-center mb-6">
               <div className="bg-green-100 p-4 rounded-lg mr-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +103,7 @@ export default function Services() {
                         d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#1B3E91]">Maintenance Informatique</h3>
+              <h3 className="text-2xl font-bold text-customblue">Maintenance Informatique</h3>
             </div>
 
             <img src="/pcsecure.jpg" alt="Maintenance Informatique" className="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" />
@@ -131,7 +130,7 @@ export default function Services() {
           </div>
 
           {/* Réseau, Internet & Connectivité */}
-          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
             <div className="flex items-center mb-6">
               <div className="bg-purple-100 p-4 rounded-lg mr-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -139,7 +138,7 @@ export default function Services() {
                         d="M7 10V6a1 1 0 011-1h8a1 1 0 011 1v4M12 16v-4M16 16v-4M8 16v-4M4 20h16" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#1B3E91]">Réseau, Internet &amp; Connectivité</h3>
+              <h3 className="text-2xl font-bold text-customblue">Réseau, Internet &amp; Connectivité</h3>
             </div>
 
             <img src="/baie.jpg" alt="Réseau et connectivité" className="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" />
