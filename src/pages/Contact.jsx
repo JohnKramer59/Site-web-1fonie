@@ -4,7 +4,7 @@ const EMAILJS_SERVICE_ID = "service_nvtel";
 const EMAILJS_TEMPLATE_ID = "template_ervf3dm";
 const EMAILJS_PUBLIC_KEY = "Q3c8kN9N5pircpp1R";
 
-export default function Contact() {
+function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -87,7 +87,7 @@ export default function Contact() {
             Prêt à améliorer votre infrastructure IT ? Parlons de votre projet !
           </p>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <InfoCard title="Téléphone" text="03 20 49 29 00" color="blue" />
             <InfoCard title="Email" text="contact@1fonie.fr" color="green" />
             <InfoCard title="Adresse" text="France entière" color="purple" />
@@ -95,7 +95,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FORMULAIRE GLOBAL – fond et couleurs d’origine */}
+      {/* FORMULAIRE GLOBAL – couleurs d’origine */}
       <section className="py-20 bg-customblue2">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
@@ -226,61 +226,39 @@ export default function Contact() {
 function Input({ label, ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <input
-        {...props}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-      />
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <input {...props} className="w-full px-4 py-3 border border-gray-300 rounded-lg" />
     </div>
   );
 }
+
 function Textarea({ label, ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <textarea
-        {...props}
-        rows={5}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none"
-      />
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <textarea {...props} rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none" />
     </div>
   );
 }
+
 function Select({ label, options = [], ...props }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <select
-        {...props}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg"
-      >
+      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <select {...props} className="w-full px-4 py-3 border border-gray-300 rounded-lg">
         {options.map(([value, text]) => (
-          <option key={value} value={value}>
-            {text}
-          </option>
+          <option key={value} value={value}>{text}</option>
         ))}
       </select>
     </div>
   );
 }
+
 function InfoCard({ title, text, color }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <div
-        className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}
-      >
-        <svg
-          className={`w-6 h-6 text-${color}-600`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+      <div className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}>
+        <svg className={`w-6 h-6 text-${color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="9" strokeWidth="2" />
         </svg>
       </div>
@@ -289,3 +267,5 @@ function InfoCard({ title, text, color }) {
     </div>
   );
 }
+
+export default Contact;
