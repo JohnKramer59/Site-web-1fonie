@@ -2,4 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
+/* ---- Styles globaux ---- */
+
+html, body, #root {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* ---- Liens ---- */
+a {
+  transition: opacity 0.2s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/* ---- Titres ---- */
+h1, h2, h3, h4, h5 {
+  color: #1B3E91; /* ton bleu foncé */
+}
+
+/* ---- Boutons ---- */
+.btn {
+  @apply inline-block px-6 py-3 rounded-lg font-semibold transition;
+}
+.btn-primary {
+  @apply bg-customblue text-white hover:opacity-90;
+}
+.btn-outline {
+  @apply border border-customblue text-customblue hover:bg-customblue hover:text-white;
+}
