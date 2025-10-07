@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/Home.jsx"; // chemin et casse EXACTS
 
 function Services() { return <div className="container mx-auto px-6 py-16">Page Services</div>; }
-function Contact() { return <div className="container mx-auto px-6 py-16">Page Contact</div>; }
-function Blog() { return <div className="container mx-auto px-6 py-16">Page Blog</div>; }
+function Contact()  { return <div className="container mx-auto px-6 py-16">Page Contact</div>; }
+function Blog()     { return <div className="container mx-auto px-6 py-16">Page Blog</div>; }
 function MentionsLegales() { return <div className="container mx-auto px-6 py-16">Mentions légales</div>; }
 function PolitiqueConfidentialite() { return <div className="container mx-auto px-6 py-16">Politique de confidentialité</div>; }
 
