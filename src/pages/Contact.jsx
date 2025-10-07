@@ -4,7 +4,13 @@ const EMAILJS_SERVICE_ID = "service_nvtel";
 const EMAILJS_TEMPLATE_ID = "template_ervf3dm";
 const EMAILJS_PUBLIC_KEY = "Q3c8kN9N5pircpp1R";
 
-export default function Contact() {
+const colorMap = {
+  blue: { bg: "bg-blue-100", text: "text-blue-600" },
+  green: { bg: "bg-green-100", text: "text-green-600" },
+  purple: { bg: "bg-purple-100", text: "text-purple-600" },
+};
+
+function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -273,13 +279,14 @@ function Select({ label, options = [], ...props }) {
 }
 
 function InfoCard({ title, text, color }) {
+  const c = colorMap[color] || colorMap.blue;
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div
-        className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}
+        className={`${c.bg} p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}
       >
         <svg
-          className={`w-6 h-6 text-${color}-600`}
+          className={`w-6 h-6 ${c.text}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -292,3 +299,5 @@ function InfoCard({ title, text, color }) {
     </div>
   );
 }
+
+export default Contact;
