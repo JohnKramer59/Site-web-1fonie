@@ -72,6 +72,160 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Configuration Type TPE/PME */}
+      <section id="configuration" className="py-20 bg-customblue2">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-customblue mb-4">Configuration Type TPE/PME</h2>
+            <p className="text-xl text-customblue max-w-3xl mx-auto">
+              Exemple d'architecture réseau jusqu'à 50 employés
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gray-50 rounded-lg p-8 mb-8">
+              <h3 className="text-2xl font-bold text-center mb-8 text-blue-900">Architecture Réseau Recommandée</h3>
+
+              {/* Diagramme du réseau */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                {/* Internet / WAN */}
+                <div className="text-left">
+                  <div className="bg-blue-100 p-6 rounded-lg mb-4">
+                    <div className="bg-blue-600 text-white p-4 rounded-lg mb-4 font-bold text-lg">INTERNET / WAN</div>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div>• Fibre optique</div>
+                      <div>• IP fixe</div>
+                      <div>• Redondance 4G</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Routeur / Firewall */}
+                <div className="text-left">
+                  <div className="bg-green-100 p-6 rounded-lg mb-4">
+                    <div className="bg-green-600 text-white p-4 rounded-lg mb-4 font-bold text-lg">ROUTEUR / FIREWALL</div>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div>• Sécurité avancée</div>
+                      <div>• VPN d'entreprise</div>
+                      <div>• QoS téléphonie</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Switch Principal */}
+                <div className="text-left">
+                  <div className="bg-purple-100 p-6 rounded-lg mb-4">
+                    <div className="bg-purple-600 text-white p-4 rounded-lg mb-4 font-bold text-lg">SWITCH PRINCIPAL</div>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div>• Ports Gigabit</div>
+                      <div>• PoE+ pour téléphones / Caméras</div>
+                      <div>• VLAN segmentation</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Équipements connectés */}
+              <div className="mt-12">
+                <h4 className="text-xl font-bold text-center mb-8 text-gray-900">Équipements Connectés</h4>
+                <div className="grid md:grid-cols-4 gap-6">
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="bg-blue-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <h5 className="font-bold mb-2 text-left">Téléphones IP</h5>
+                    <div className="text-sm text-gray-600 text-left">
+                      <div>• Téléphones IP</div>
+                      <div>• PoE alimentés</div>
+                      <div>• HD Audio</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="bg-green-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2z" />
+                      </svg>
+                    </div>
+                    <h5 className="font-bold mb-2 text-left">Postes de Travail</h5>
+                    <div className="text-sm text-gray-600 text-left">
+                      <div>• PC fixes</div>
+                      <div>• portables</div>
+                      <div>• WiFi 6 ou 7</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="bg-orange-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h5 className="font-bold mb-2 text-left">Caméras IP</h5>
+                    <div className="text-sm text-gray-600 text-left">
+                      <div>• caméras IP HD</div>
+                      <div>• PoE+</div>
+                      <div>• Vision nocturne</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div className="bg-red-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                      </svg>
+                    </div>
+                    <h5 className="font-bold mb-2 text-left">Serveurs</h5>
+                    <div className="text-sm text-gray-600 text-left">
+                      <div>• Serveur principal</div>
+                      <div>• Serveur sauvegarde</div>
+                      <div>• NAS entreprise</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Avantages */}
+              <div className="mt-12 bg-white p-8 rounded-lg">
+                <h4 className="text-xl font-bold mb-6 text-center text-gray-900">Avantages de cette Configuration</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <div>
+                      <h5 className="font-semibold">Sécurité Maximale</h5>
+                      <p className="text-gray-600 text-sm">Firewall, VPN, segmentation VLAN</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <div>
+                      <h5 className="font-semibold">Performance Optimale</h5>
+                      <p className="text-gray-600 text-sm">Gigabit partout, QoS téléphonie</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <div>
+                      <h5 className="font-semibold">Évolutivité</h5>
+                      <p className="text-gray-600 text-sm">Croissance jusqu'à 100 postes</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <div>
+                      <h5 className="font-semibold">Maintenance Simplifiée</h5>
+                      <p className="text-gray-600 text-sm">Monitoring centralisé, alertes automatiques</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{/* card container */}
+          </div>
+        </div>
+      </section>
+
       {/* Témoignages Clients */}
       <section id="testimonials" className="py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -93,9 +247,7 @@ export default function Home() {
                 <div className="text-yellow-500">★★★★★</div>
               </div>
               <p className="text-customblue mb-4 italic">
-                "Enfin une société de téléphonie à taille humaine : Forfaits adaptés , évolutifs , rapidité dans les solutions techniques , Prix hyper compétitif . 
-Croyez moi : j en ai croisé beaucoup des fournisseurs de téléphonie, box , internet, standard et j ai malheureusement croisé aussi beaucoup d' escrocs.
-Un conseil : 1FONIE"
+                "Enfin une société de téléphonie à taille humaine : Forfaits adaptés , évolutifs , rapidité dans les solutions techniques , Prix hyper compétitif. Un conseil : 1FONIE"
               </p>
               <div className="font-semibold text-customblue">Frédéric,</div>
               <div className="text-customblue text-sm">Pharmacien, Deux sèvres</div>
@@ -111,8 +263,7 @@ Un conseil : 1FONIE"
                 <div className="text-yellow-500">★★★★★</div>
               </div>
               <p className="text-customblue mb-4 italic">
-                "Maintenance réseau exemplaire ! Plus de panne depuis 2 ans. L'équipe est réactive 
-                et leurs conseils nous ont permis d'optimiser notre infrastructure."
+                "Maintenance réseau exemplaire ! Plus de panne depuis 2 ans. L'équipe est réactive et leurs conseils nous ont permis d'optimiser notre infrastructure."
               </p>
               <div className="font-semibold text-customblue">Jean-Michel Durand</div>
               <div className="text-customblue text-sm">PDG, Durand & Associés (45 employés)</div>
@@ -128,8 +279,7 @@ Un conseil : 1FONIE"
                 <div className="text-yellow-500">★★★★★</div>
               </div>
               <p className="text-customblue mb-4 italic">
-                "Service irréprochable ! Installation rapide du centrex et formation complète. 
-                Nos équipes maîtrisent parfaitement les nouvelles fonctionnalités."
+                "Service irréprochable ! Installation rapide du centrex et formation complète. Nos équipes maîtrisent parfaitement les nouvelles fonctionnalités."
               </p>
               <div className="font-semibold text-customblue">Marie Petit</div>
               <div className="text-customblue text-sm">Responsable IT, Architectes Réunis (22 employés)</div>
