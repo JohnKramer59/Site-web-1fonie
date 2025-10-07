@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import Contact from "./pages/Contact.jsx";
+// importe via le dossier pour utiliser le wrapper
+import Contact from "./pages/Contact";
 
 function Page({ title }) {
   return (
