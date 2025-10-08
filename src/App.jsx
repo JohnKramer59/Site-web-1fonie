@@ -1,17 +1,22 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
+
+// Pages existantes
 import Home from "./pages/Home.jsx";
-import Services from "./pages/Services.jsx";
+import Services from "./pages/Services.jsx"; // TON fichier existant
+import Contact from "./pages/Contact";       // via wrapper index.js si présent
+
+// Piliers service (dossiers /pages/services/* fournis)
 import StandardTelephone from "./pages/services/StandardTelephone.jsx";
 import MaintenanceInformatique from "./pages/services/MaintenanceInformatique.jsx";
 import TelephonieMobile from "./pages/services/TelephonieMobile.jsx";
 import InternetFibre from "./pages/services/InternetFibre.jsx";
+
+// SEO local (dossiers /pages/villes/* fournis)
 import Cities from "./pages/villes/Cities.jsx";
 import City from "./pages/villes/City.jsx";
 import CityService from "./pages/villes/CityService.jsx";
-// Contact via wrapper déjà mis en place
-import Contact from "./pages/Contact";
 
 function Page({ title }) {
   return (
@@ -28,11 +33,13 @@ export default function App() {
       <Header />
       <main className="pt-20">
         <Routes>
+          {/* Accueil */}
           <Route path="/" element={<Home />} />
 
-          {/* Sommaire services */}
+          {/* Sommaire services = TON fichier existant */}
           <Route path="/services" element={<Services />} />
-          {/* Piliers service */}
+
+          {/* Piliers service détaillés */}
           <Route path="/services/standard-telephonique" element={<StandardTelephone />} />
           <Route path="/services/maintenance-informatique" element={<MaintenanceInformatique />} />
           <Route path="/services/telephonie-mobile" element={<TelephonieMobile />} />
