@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Seo from "../../seo/Seo.jsx";
 import { CITIES } from "../../seo/cities.js";
 import { SERVICES } from "../../seo/services.js";
+import { siteUrl } from "../../seo/schema.js";
 
 export default function Cities() {
   return (
     <main>
+      <Seo
+        title="Villes desservies en Hauts-de-France | 1FONIE Pro"
+        description="Couverture Hauts-de-France. Téléphonie IP, Internet fibre, maintenance informatique, mobile pro. Devis 24h."
+        canonical={`${siteUrl}/villes`}
+      />
+
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold text-customblue mb-6">Villes desservies</h1>
@@ -22,19 +30,14 @@ export default function Cities() {
                 <ul className="space-y-2">
                   {SERVICES.map(s => (
                     <li key={s.slug}>
-                      <Link
-                        to={`/villes/${c.slug}/${s.slug}`}
-                        className="text-sm underline text-gray-800 hover:opacity-80"
-                      >
+                      <Link to={`/villes/${c.slug}/${s.slug}`} className="text-sm underline text-gray-800 hover:opacity-80">
                         {s.name} à {c.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-3">
-                  <Link to={`/villes/${c.slug}`} className="text-sm text-customblue underline">
-                    Voir la page ville
-                  </Link>
+                  <Link to={`/villes/${c.slug}`} className="text-sm text-customblue underline">Voir la page ville</Link>
                 </div>
               </div>
             ))}
