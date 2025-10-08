@@ -1,0 +1,15 @@
+export const CITIES = [
+  { slug: "lille", name: "Lille" },
+  { slug: "amiens", name: "Amiens" },
+  { slug: "roubaix", name: "Roubaix" },
+  { slug: "tourcoing", name: "Tourcoing" },
+  { slug: "dunkerque", name: "Dunkerque" },
+  { slug: "calais", name: "Calais" },
+  { slug: "villeneuve-d-ascq", name: "Villeneuve-d’Ascq" },
+  { slug: "beauvais", name: "Beauvais" },
+  { slug: "saint-quentin", name: "Saint-Quentin" },
+  { slug: "valenciennes", name: "Valenciennes" },
+  { slug: "arras", name: "Arras" },
+  { slug: "boulogne-sur-mer", name: "Boulogne-sur-Mer" },
+  { slug: "wattrelos", name: "Wattrelos" },
+];
