@@ -213,6 +213,7 @@ function Contact() {
                 <div className="text-center text-sm text-gray-500">
                   <p>🛡️ Données non partagées</p>
                   <p>⏰ Réponse sous 24h</p>
+                  <p><a href="/services/maintenance-informatique">Maintenance informatique</a></p>
                 </div>
               </form>
             </div>
