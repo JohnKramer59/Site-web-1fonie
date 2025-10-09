@@ -10,7 +10,6 @@ export default function MaintenanceInformatique() {
     "Contrat de maintenance informatique, infogérance TPE/PME, dépannage informatique, supervision 24/7, EDR, sauvegarde externalisée. Devis 24h.";
   const canonical = `${siteUrl}/services/maintenance-informatique`;
 
-  // 3 paragraphes = champ lexical maintenance uniquement
   const P1 = (
     <p className="text-gray-700">
       Notre offre de <strong>maintenance informatique</strong> s’adresse aux TPE/PME qui veulent un SI stable et
@@ -45,17 +44,37 @@ export default function MaintenanceInformatique() {
     <main>
       <Seo title={title} description={description} canonical={canonical} />
 
-      {/* Hero */}
+      {/* Hero + contenu */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold text-customblue mb-4">
             Maintenance informatique / Infogérance
           </h1>
+
           <div className="space-y-4 max-w-3xl">
             {P1}
             {P2}
+          </div>
+
+          {/* Bloc visuel central */}
+          <figure className="mt-8">
+            <img
+              src="/pcsecure.jpg"
+              alt="Supervision 24/7 et protection des postes en entreprise"
+              width="1280"
+              height="720"
+              className="w-full max-w-4xl rounded-xl shadow-lg mx-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption className="text-sm text-gray-500 text-center mt-3">
+              Supervision, mises à jour et sécurité EDR pour un parc maîtrisé.
+            </figcaption>
+          </figure>
+
+          <div className="space-y-4 max-w-3xl mt-8">
             {P3}
           </div>
+
           <div className="mt-8">
             <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">
               Demander un devis
@@ -64,24 +83,28 @@ export default function MaintenanceInformatique() {
         </div>
       </section>
 
-      {/* Maillage villes: maintenance uniquement */}
+      {/* Villes — présentation épurée */}
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-customblue">Où intervenons-nous</h2>
-            <p className="text-gray-700 mt-3">
-              Intervention Hauts-de-France. Sélectionnez votre ville pour la page locale dédiée à la{" "}
-              <strong>maintenance informatique</strong>.
+          {/* Colonne principale */}
+          <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
+            <h2 className="text-2xl font-semibold text-customblue">
+              Villes desservies en Hauts-de-France
+            </h2>
+            <p className="text-gray-700 mt-2">
+              Sélectionnez votre ville pour la page locale dédiée à la <strong>maintenance informatique</strong>.
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {/* Grille de liens propre et régulière */}
+            <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {CITIES.map((c) => (
                 <Link
                   key={c.slug}
                   to={`/villes/${c.slug}/maintenance-informatique`}
-                  className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 hover:bg-white hover:border-gray-300"
+                  className="inline-flex items-center justify-center h-11 px-4 text-sm rounded-full bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-800"
+                  aria-label={`Maintenance informatique à ${c.name}`}
                 >
-                  Maintenance informatique à {c.name}
+                  Maintenance à {c.name}
                 </Link>
               ))}
             </div>
@@ -93,8 +116,8 @@ export default function MaintenanceInformatique() {
             </div>
           </div>
 
-          {/* Liens utiles locaux */}
-          <aside className="bg-white p-6 rounded-lg shadow">
+          {/* Colonne latérale compacte */}
+          <aside className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-semibold text-customblue">Accès rapide</h3>
             <ul className="mt-3 space-y-2">
               {["lille", "amiens", "roubaix", "tourcoing", "valenciennes", "arras"]
@@ -106,13 +129,20 @@ export default function MaintenanceInformatique() {
                       to={`/villes/${c.slug}/maintenance-informatique`}
                       className="underline text-gray-800 hover:opacity-80"
                     >
-                      Maintenance informatique à {c.name}
+                      Maintenance à {c.name}
                     </Link>
                   </li>
                 ))}
             </ul>
-            <div className="mt-4">
-              <Link to="/contact" className="inline-block bg-customblue text-white px-4 py-2 rounded-md">
+
+            <div className="mt-6 border-t border-gray-100 pt-6">
+              <p className="text-sm text-gray-600">
+                Dépannage urgent ou contrat d’infogérance. Télémaintenance immédiate ou déplacement planifié.
+              </p>
+              <Link
+                to="/contact"
+                className="mt-4 inline-flex justify-center w-full bg-customblue text-white px-4 py-2.5 rounded-md"
+              >
                 Obtenir une étude gratuite
               </Link>
             </div>
