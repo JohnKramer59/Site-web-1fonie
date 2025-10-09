@@ -1,66 +1,145 @@
+// src/pages/services/StandardTelephone.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import Seo from "../../seo/Seo.jsx";
 import { CITIES } from "../../seo/cities.js";
-import { serviceSchema, siteUrl } from "../../seo/schema.js";
+import { siteUrl } from "../../seo/schema.js";
 
 export default function StandardTelephone() {
-  const title = "Standard téléphonique VoIP/Centrex | 1FONIE Pro";
-  const description = "SVI, enregistrement, files d’attente, softphone et Teams. Déploiement rapide pour TPE/PME en Hauts-de-France.";
+  const title = "Standard téléphonique VoIP / Centrex | 1FONIE Pro";
+  const description =
+    "Téléphonie IP entreprise: standard téléphonique, centrex cloud, SVI, files d’attente, enregistrement d’appels, softphone, portabilité. Devis 24h.";
   const canonical = `${siteUrl}/services/standard-telephonique`;
-  const jsonLd = serviceSchema({
-    name: "Standard téléphonique VoIP / Centrex",
-    description,
-    areaServed: "Hauts-de-France",
-  });
+
+  const P1 = (
+    <p className="text-gray-700">
+      Passez à un <strong>standard téléphonique</strong> moderne basé sur la <strong>téléphonie IP</strong> (<strong>VoIP</strong>).
+      Nous déployons un <strong>centrex cloud</strong> (PBX hébergé) pour éliminer les matériels obsolètes, garantir la
+      continuité d’activité et offrir un <strong>accueil téléphonique</strong> soigné. Postes IP, casques, <strong>softphone</strong> PC/mobile:
+      vous choisissez le mix. Objectif: qualité de service, mobilité et coûts prévisibles.
+    </p>
+  );
+
+  const P2 = (
+    <p className="text-gray-700">
+      Côté fonctionnalités: <strong>SVI</strong>, <strong>files d’attente</strong>, groupes, <strong>enregistrement d’appels</strong>,
+      <strong> SDA</strong>, horaires et musiques, <strong>statistiques</strong> et supervision en temps réel.
+      L’intégration <strong>Microsoft Teams</strong>/CRM et la <strong>QoS voix</strong> assurent productivité et fiabilité, y compris en
+      télétravail. Administration simple, profils utilisateurs standardisés, droits par rôle.
+    </p>
+  );
+
+  const P3 = (
+    <p className="text-gray-700">
+      Méthode de déploiement: audit rapide, <strong>migration PABX vers VoIP</strong>, <strong>portabilité des numéros</strong>,
+      mise en service et formation. Packs/licences adaptés au volume d’appels et aux besoins d’agent.
+      <strong> SLA voix</strong> et supervision continue. Résultat: image pro, décroché rapide, suivi de la qualité, et budget maîtrisé.
+    </p>
+  );
 
   return (
     <main>
-      <Seo title={title} description={description} canonical={canonical} jsonLd={jsonLd} />
+      <Seo title={title} description={description} canonical={canonical} />
 
-      {/* Hero */}
+      {/* Hero + contenu */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold text-customblue mb-4">Standard téléphonique VoIP / Centrex pour TPE/PME</h1>
-          <p className="text-gray-700 max-w-3xl">Passez au standard cloud: SVI, files d’attente, enregistrement d’appels, softphone et intégration Teams. Déploiement rapide, coûts maîtrisés.</p>
+          <h1 className="text-4xl font-bold text-customblue mb-4">
+            Standard téléphonique entreprise (VoIP / Centrex)
+          </h1>
+
+          <div className="space-y-4 max-w-3xl">
+            {P1}
+            {P2}
+            {P3}
+          </div>
+
+          {/* Bloc visuel après les 3 paragraphes */}
+          <figure className="mt-8">
+            <img
+              src="/ipphone.jpg"
+              alt="Standard téléphonique VoIP avec postes IP et softphone"
+              width="1280"
+              height="720"
+              className="w-full max-w-4xl rounded-xl shadow-lg mx-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption className="text-sm text-gray-500 text-center mt-3">
+              SVI, files d’attente, enregistrement et softphone pour une téléphonie d’entreprise moderne.
+            </figcaption>
+          </figure>
+
+          <div className="mt-8">
+            <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">
+              Demander un devis
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Contenu + maillage */}
+      {/* Villes — présentation épurée */}
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-customblue">Bénéfices clés</h2>
-            <ul className="mt-4 space-y-2 text-gray-700">
-              <li>• Accueil professionnel: SVI, SDA, musiques, horaires</li>
-              <li>• Mobilité: softphone PC/mobile, télétravail natif</li>
-              <li>• Contrôle qualité: enregistrement, statistiques, supervision</li>
-              <li>• Économie: pas de PABX à maintenir, abonnement prévisible</li>
-              <li>• Fiabilité voix: priorisation QoS, surveillance proactive</li>
-            </ul>
+          {/* Colonne principale */}
+          <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
+            <h2 className="text-2xl font-semibold text-customblue">
+              Villes desservies en Hauts-de-France
+            </h2>
+            <p className="text-gray-700 mt-2">
+              Sélectionnez votre ville pour la page locale dédiée au <strong>standard téléphonique</strong>.
+            </p>
 
-            <h3 className="text-xl font-semibold mt-8 text-customblue">Packs</h3>
-            <div className="mt-3 grid md:grid-cols-3 gap-4">
-              <div className="border rounded-lg p-4"><h4 className="font-semibold">Essentiel</h4><p className="text-sm text-gray-600 mt-1">SVI simple, softphone</p></div>
-              <div className="border rounded-lg p-4"><h4 className="font-semibold">Avancé</h4><p className="text-sm text-gray-600 mt-1">Files d’attente, rapports</p></div>
-              <div className="border rounded-lg p-4"><h4 className="font-semibold">Entreprise</h4><p className="text-sm text-gray-600 mt-1">Intégrations + enregistrement</p></div>
+            {/* Grille de liens propre et régulière */}
+            <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {CITIES.map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/villes/${c.slug}/standard-telephonique`}
+                  className="inline-flex items-center justify-center h-11 px-4 text-sm rounded-full bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-800"
+                  aria-label={`Standard téléphonique à ${c.name}`}
+                >
+                  Standard à {c.name}
+                </Link>
+              ))}
             </div>
 
             <div className="mt-8">
-              <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">Demander un devis</Link>
+              <Link to="/villes" className="text-customblue underline">
+                Voir toutes les villes
+              </Link>
             </div>
           </div>
 
-          <aside className="bg-white p-6 rounded-lg shadow">
-            <h4 className="font-semibold text-customblue">Standard téléphonique par ville</h4>
-            <ul className="mt-3 space-y-2 max-h-[420px] overflow-auto pr-2">
-              {CITIES.map(c => (
-                <li key={c.slug}>
-                  <Link to={`/villes/${c.slug}/standard-telephonique`} className="underline text-gray-800 hover:opacity-80">À {c.name}</Link>
-                </li>
-              ))}
+          {/* Colonne latérale compacte */}
+          <aside className="bg-white p-6 rounded-xl shadow">
+            <h3 className="font-semibold text-customblue">Accès rapide</h3>
+            <ul className="mt-3 space-y-2">
+              {["lille", "amiens", "roubaix", "tourcoing", "valenciennes", "arras"]
+                .map((slug) => CITIES.find((c) => c.slug === slug))
+                .filter(Boolean)
+                .map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      to={`/villes/${c.slug}/standard-telephonique`}
+                      className="underline text-gray-800 hover:opacity-80"
+                    >
+                      Standard à {c.name}
+                    </Link>
+                  </li>
+                ))}
             </ul>
-            <div className="mt-4"><Link to="/villes" className="underline text-customblue">Voir toutes les villes</Link></div>
+
+            <div className="mt-6 border-t border-gray-100 pt-6">
+              <p className="text-sm text-gray-600">
+                Portabilité de numéros, migration PABX, formation utilisateurs, supervision qualité voix.
+              </p>
+              <Link
+                to="/contact"
+                className="mt-4 inline-flex justify-center w-full bg-customblue text-white px-4 py-2.5 rounded-md"
+              >
+                Obtenir une estimation
+              </Link>
+            </div>
           </aside>
         </div>
       </section>
