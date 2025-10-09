@@ -1,3 +1,4 @@
+// src/pages/services/MaintenanceInformatique.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import Seo from "../../seo/Seo.jsx";
@@ -54,9 +55,10 @@ export default function MaintenanceInformatique() {
           <div className="space-y-4 max-w-3xl">
             {P1}
             {P2}
+            {P3}
           </div>
 
-          {/* Bloc visuel central */}
+          {/* Bloc visuel après les 3 paragraphes */}
           <figure className="mt-8">
             <img
               src="/pcsecure.jpg"
@@ -70,10 +72,6 @@ export default function MaintenanceInformatique() {
               Supervision, mises à jour et sécurité EDR pour un parc maîtrisé.
             </figcaption>
           </figure>
-
-          <div className="space-y-4 max-w-3xl mt-8">
-            {P3}
-          </div>
 
           <div className="mt-8">
             <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">
