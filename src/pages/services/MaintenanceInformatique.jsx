@@ -2,56 +2,120 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Seo from "../../seo/Seo.jsx";
 import { CITIES } from "../../seo/cities.js";
-import { serviceSchema, siteUrl } from "../../seo/schema.js";
+import { siteUrl } from "../../seo/schema.js";
 
 export default function MaintenanceInformatique() {
-  const title = "Maintenance informatique / Infogérance | 1FONIE Pro";
-  const description = "Supervision 24/7, helpdesk, sauvegarde, sécurité EDR. Infogérance TPE/PME en Hauts-de-France. Devis 24h.";
+  const title = "Maintenance informatique & infogérance | 1FONIE Pro";
+  const description =
+    "Contrat de maintenance informatique, infogérance TPE/PME, dépannage informatique, supervision 24/7, EDR, sauvegarde externalisée. Devis 24h.";
   const canonical = `${siteUrl}/services/maintenance-informatique`;
-  const jsonLd = serviceSchema({
-    name: "Maintenance informatique / Infogérance",
-    description,
-    areaServed: "Hauts-de-France",
-  });
+
+  // 3 paragraphes = champ lexical maintenance uniquement
+  const P1 = (
+    <p className="text-gray-700">
+      Notre offre de <strong>maintenance informatique</strong> s’adresse aux TPE/PME qui veulent un SI stable et
+      prévisible. Nous opérons en <strong>infogérance</strong> complète ou partagée, avec un{" "}
+      <strong>contrat de maintenance informatique</strong> clair: périmètre, responsabilités, niveaux de service. La
+      <strong> supervision 24/7</strong>, le <strong>patch management</strong>, l’<strong>antivirus EDR</strong> et la{" "}
+      <strong>sauvegarde externalisée</strong> réduisent les incidents et sécurisent postes, serveurs et Microsoft&nbsp;365.
+      Objectif: disponibilité élevée, tickets en baisse, coût maîtrisé.
+    </p>
+  );
+
+  const P2 = (
+    <p className="text-gray-700">
+      En pratique, nous gérons le <strong>dépannage informatique</strong> via <strong>télémaintenance</strong> et
+      <strong> intervention sur site</strong> selon vos <strong>SLA</strong>. Onboarding structuré: <strong>audit du parc</strong>,
+      inventaire, durcissement sécurité, politiques M365, plan de <strong>mise à jour</strong>. Le{" "}
+      <strong>helpdesk</strong> traite les demandes utilisateurs, et un <strong>reporting mensuel</strong> suit incidents,
+      correctifs et prévention. Vous conservez la visibilité, nous prenons la charge opérationnelle.
+    </p>
+  );
+
+  const P3 = (
+    <p className="text-gray-700">
+      Trois modes: <strong>forfait d’infogérance</strong> illimitée, <strong>contrat d’assistance</strong> à tickets,
+      ou modèle hybride préventif/curatif. Engagements mesurables: baisse des tickets récurrents,{" "}
+      <strong>temps de rétablissement</strong> réduit, conformité sauvegardes testées. Vous gagnez en sérénité tout en
+      gardant un budget lisible et une montée en maturité progressive.
+    </p>
+  );
 
   return (
     <main>
-      <Seo title={title} description={description} canonical={canonical} jsonLd={jsonLd} />
+      <Seo title={title} description={description} canonical={canonical} />
 
+      {/* Hero */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold text-customblue mb-4">Maintenance informatique / Infogérance</h1>
-          <p className="text-gray-700 max-w-3xl">Supervision 24/7, helpdesk réactif, sauvegarde et sécurité EDR. Moins d’incidents, plus de disponibilité pour vos équipes.</p>
+          <h1 className="text-4xl font-bold text-customblue mb-4">
+            Maintenance informatique / Infogérance
+          </h1>
+          <div className="space-y-4 max-w-3xl">
+            {P1}
+            {P2}
+            {P3}
+          </div>
+          <div className="mt-8">
+            <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">
+              Demander un devis
+            </Link>
+          </div>
         </div>
       </section>
 
+      {/* Maillage villes: maintenance uniquement */}
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-customblue">Ce que nous gérons</h2>
-            <ul className="mt-4 space-y-2 text-gray-700">
-              <li>• Monitoring 24/7, alerting, patch management</li>
-              <li>• Support utilisateurs: télémaintenance et sur site</li>
-              <li>• Sauvegarde, PRA/PCA, anti-ransomware (EDR)</li>
-              <li>• Microsoft 365, AD, postes et serveurs</li>
-              <li>• Tableau de bord et rapports mensuels</li>
-            </ul>
+            <h2 className="text-2xl font-semibold text-customblue">Où intervenons-nous</h2>
+            <p className="text-gray-700 mt-3">
+              Intervention Hauts-de-France. Sélectionnez votre ville pour la page locale dédiée à la{" "}
+              <strong>maintenance informatique</strong>.
+            </p>
+
+            <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {CITIES.map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/villes/${c.slug}/maintenance-informatique`}
+                  className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 hover:bg-white hover:border-gray-300"
+                >
+                  Maintenance informatique à {c.name}
+                </Link>
+              ))}
+            </div>
 
             <div className="mt-8">
-              <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">Demander un devis</Link>
+              <Link to="/villes" className="text-customblue underline">
+                Voir toutes les villes
+              </Link>
             </div>
           </div>
 
+          {/* Liens utiles locaux */}
           <aside className="bg-white p-6 rounded-lg shadow">
-            <h4 className="font-semibold text-customblue">Infogérance par ville</h4>
-            <ul className="mt-3 space-y-2 max-h-[420px] overflow-auto pr-2">
-              {CITIES.map(c => (
-                <li key={c.slug}>
-                  <Link to={`/villes/${c.slug}/maintenance-informatique`} className="underline text-gray-800 hover:opacity-80">À {c.name}</Link>
-                </li>
-              ))}
+            <h3 className="font-semibold text-customblue">Accès rapide</h3>
+            <ul className="mt-3 space-y-2">
+              {["lille", "amiens", "roubaix", "tourcoing", "valenciennes", "arras"]
+                .map((slug) => CITIES.find((c) => c.slug === slug))
+                .filter(Boolean)
+                .map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      to={`/villes/${c.slug}/maintenance-informatique`}
+                      className="underline text-gray-800 hover:opacity-80"
+                    >
+                      Maintenance informatique à {c.name}
+                    </Link>
+                  </li>
+                ))}
             </ul>
-            <div className="mt-4"><Link to="/villes" className="underline text-customblue">Voir toutes les villes</Link></div>
+            <div className="mt-4">
+              <Link to="/contact" className="inline-block bg-customblue text-white px-4 py-2 rounded-md">
+                Obtenir une étude gratuite
+              </Link>
+            </div>
           </aside>
         </div>
       </section>
