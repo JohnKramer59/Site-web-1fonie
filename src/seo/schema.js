@@ -1,16 +1,39 @@
-// Stub temporaire pour éviter les erreurs pendant le build sans Helmet/JSON-LD.
-// Tu pourras remplacer ces contenus par les versions complètes plus tard.
-
 export const siteUrl = "https://www.1fonie.fr";
 
 export function organizationSchema() {
-  return {};
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "1FONIE Pro",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`
+  };
 }
 
-export function serviceSchema() {
-  return {};
+export function serviceSchema({ name, description, areaServed }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    areaServed,
+    provider: {
+      "@type": "Organization",
+      name: "1FONIE Pro",
+      url: siteUrl,
+      logo: `${siteUrl}/logo.png`
+    }
+  };
 }
 
-export function faqSchema() {
-  return { mainEntity: [] };
+export function faqSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a }
+    }))
+  };
 }
