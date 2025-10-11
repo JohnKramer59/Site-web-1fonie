@@ -4,6 +4,32 @@ const EMAILJS_SERVICE_ID = "service_nvtel";
 const EMAILJS_TEMPLATE_ID = "template_ervf3dm";
 const EMAILJS_PUBLIC_KEY = "Q3c8kN9N5pircpp1R";
 
+function PhoneIcon({ className }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  );
+}
+
+function MailIcon({ className }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  );
+}
+
+function LocationIcon({ className }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 111.314 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  );
+}
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -80,17 +106,17 @@ function Contact() {
   return (
     <main>
       {/* Contact Info */}
-      <section id="contact" className="py-20 bg-gray-50">
+      <section id="contact" className="py-20 bg-gray-50 w-full">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
           <p className="text-xl text-gray-600 mb-12">
-            Prêt à améliorer votre infrastructure IT ? Parlons de votre projet !
+            Prêt à améliorer votre infrastructure IT ? Parlons de votre projet.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <InfoCard title="Téléphone" text="03 20 49 29 00" color="blue" />
-            <InfoCard title="Email" text="contact@1fonie.fr" color="green" />
-            <InfoCard title="Adresse" text="France entière" color="purple" />
+            <InfoCard title="Téléphone" text="03 20 49 29 00" color="blue" Icon={PhoneIcon} />
+            <InfoCard title="Email" text="contact@1fonie.fr" color="green" Icon={MailIcon} />
+            <InfoCard title="Adresse" text="France entière" color="purple" Icon={LocationIcon} />
           </div>
         </div>
       </section>
@@ -255,13 +281,30 @@ function Select({ label, options = [], ...props }) {
   );
 }
 
-function InfoCard({ title, text, color }) {
+function InfoCard({ title, text, color = "gray", Icon = null }) {
+  // Attention: les classes dynamiques Tailwind nécessitent une safelist si purge activé.
+  const bg = {
+    blue: "bg-blue-100",
+    green: "bg-green-100",
+    purple: "bg-purple-100",
+    gray: "bg-gray-100",
+  }[color] || "bg-gray-100";
+
+  const fg = {
+    blue: "text-blue-600",
+    green: "text-green-600",
+    purple: "text-purple-600",
+    gray: "text-gray-600",
+  }[color] || "text-gray-600";
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className={`p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-${color}-100`}>
-        <svg className={`w-6 h-6 text-${color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9" strokeWidth="2" />
-        </svg>
+      <div className={`${bg} p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center`}>
+        {Icon ? <Icon className={`w-6 h-6 ${fg}`} /> : (
+          <svg className={`w-6 h-6 ${fg}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" strokeWidth="2" />
+          </svg>
+        )}
       </div>
       <h3 className="font-bold mb-2">{title}</h3>
       <p className="text-gray-600">{text}</p>
