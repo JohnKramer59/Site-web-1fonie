@@ -164,7 +164,7 @@ export default function Home() {
                 <div className="bg-yellow-100 p-2 rounded-full mr-3"><svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg></div>
                 <div className="text-yellow-500">★★★★★</div>
               </div>
-              <p className="text-customblue mb-4 italic">"Enfin une société de téléphonie à taille humaine [...] Un conseil : 1FONIE"</p>
+              <p className="text-customblue mb-4 italic">"Enfin une société de téléphonie à taille humaine : Forfaits adaptés , évolutifs , rapidité dans les solutions techniques , Prix hyper compétitif . Croyez moi : j en ai croisé beaucoup des fournisseurs de téléphonie, box , internet, standard et j ai malheureusement croisé aussi beaucoup d' escrocs. Un conseil : 1FONIE"</p>
               <div className="font-semibold text-customblue">Frédéric,</div>
               <div className="text-customblue text-sm">Pharmacien, Deux sèvres</div>
             </div>
