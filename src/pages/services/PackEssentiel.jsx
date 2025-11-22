@@ -17,9 +17,27 @@ export default function PackEssentiel() {
       {/* HERO */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold text-customblue mb-4">
+
+          <h1 className="text-4xl font-bold text-customblue mb-6">
             Offre Pack Essentiel
           </h1>
+
+          {/* ⭐ Boutons : retour maintenance + aller au Pack Optimum */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <Link
+              to="/services/maintenance-informatique"
+              className="w-full sm:w-auto bg-gray-300 hover:bg-gray-400 text-gray-900 px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Retour à la maintenance
+            </Link>
+
+            <Link
+              to="/services/pack-optimum"
+              className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Passer au Pack Optimum
+            </Link>
+          </div>
 
           <p className="text-gray-700 max-w-3xl">
             Le Pack Essentiel réunit toutes les protections indispensables pour les TPE/PME :
@@ -125,7 +143,7 @@ export default function PackEssentiel() {
             </p>
           </div>
 
-          {/* ThreatLocker Zero Trust */}
+          {/* Zero Trust */}
           <div>
             <h2 className="text-2xl font-semibold text-customblue mb-3">
               1FONIE Protect – Sécurité Zero Trust
