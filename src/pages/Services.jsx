@@ -23,6 +23,7 @@ export default function Services() {
       {/* Cartes services */}
       <section className="pb-20">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+
           {/* Standards Téléphoniques */}
           <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
             <div className="flex items-center mb-6">
@@ -52,6 +53,13 @@ export default function Services() {
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Serveurs vocaux interactifs (SVI)</li>
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Formation utilisateurs et support technique</li>
             </ul>
+
+            <a
+              href="/services/standards-telephoniques"
+              className="w-full block bg-orange-300 text-white px-6 py-3 rounded-lg hover:bg-orange-400 font-semibold mb-3 text-center"
+            >
+              En savoir plus
+            </a>
 
             <button
               onClick={() => openServiceForm("telephone_systems")}
@@ -85,6 +93,13 @@ export default function Services() {
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Option 5G sans surcoût</li>
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Téléphones en leasing</li>
             </ul>
+
+            <a
+              href="/services/telephonie-mobile"
+              className="w-full block bg-blue-300 text-white px-6 py-3 rounded-lg hover:bg-blue-400 font-semibold mb-3 text-center"
+            >
+              En savoir plus
+            </a>
 
             <button
               onClick={() => openServiceForm("mobile_telephony")}
@@ -121,6 +136,13 @@ export default function Services() {
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Sensibilisation cybersécurité</li>
             </ul>
 
+            <a
+              href="/services/maintenance-informatique"
+              className="w-full block bg-green-300 text-white px-6 py-3 rounded-lg hover:bg-green-400 font-semibold mb-3 text-center"
+            >
+              En savoir plus
+            </a>
+
             <button
               onClick={() => openServiceForm("network_maintenance")}
               className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-semibold"
@@ -156,6 +178,13 @@ export default function Services() {
               <li className="flex items-center"><span className="text-green-600 mr-2">✓</span>Baie de brassage sécurisée</li>
             </ul>
 
+            <a
+              href="/services/reseau-connectivite"
+              className="w-full block bg-purple-300 text-white px-6 py-3 rounded-lg hover:bg-purple-400 font-semibold mb-3 text-center"
+            >
+              En savoir plus
+            </a>
+
             <button
               onClick={() => openServiceForm("network_connectivity")}
               className="w-full bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-semibold"
@@ -163,6 +192,7 @@ export default function Services() {
               Demander un Devis
             </button>
           </div>
+
         </div>
       </section>
     </main>
