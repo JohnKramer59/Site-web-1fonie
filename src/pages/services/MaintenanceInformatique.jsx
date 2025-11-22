@@ -23,81 +23,72 @@ export default function MaintenanceInformatique() {
           </h1>
 
           <div className="space-y-6 max-w-3xl text-gray-700 leading-relaxed">
-
-            {/* INTRO SIMPLIFIÉE */}
             <p>
-              Notre service de <strong>maintenance informatique</strong> permet aux TPE et PME de disposer d’un parc
-              informatique stable, sécurisé et opérationnel en permanence. Nous gérons votre environnement en
-              <strong> infogérance complète ou partagée</strong>, selon votre organisation.
+              Notre service de <strong>maintenance informatique</strong> permet aux TPE et PME de disposer
+              d’un parc informatique stable, sécurisé et opérationnel en permanence.
+              Nous gérons votre environnement en <strong>infogérance complète ou partagée</strong>,
+              selon votre organisation.
             </p>
 
             <p>
-              Grâce à la <strong>supervision 24/7</strong>, aux mises à jour automatiques, au <strong>antivirus EDR</strong> et à la
-              <strong> sauvegarde externalisée</strong>, les pannes sont réduites au minimum et les données restent protégées.
+              Grâce à la <strong>supervision 24/7</strong>, aux mises à jour automatiques,
+              au <strong>antivirus EDR</strong> et à la <strong>sauvegarde externalisée</strong>,
+              les pannes sont réduites au minimum et les données restent protégées.
               L’objectif : moins de problèmes, plus de productivité et un budget maîtrisé.
             </p>
 
-            {/* AVANTAGES */}
             <h2 className="text-2xl font-semibold text-customblue mt-8">
               Les avantages pour votre entreprise
             </h2>
 
             <p>
-              <strong>Sérénité :</strong> vos postes, serveurs, outils Microsoft 365 et connexions sont surveillés en continu.
+              <strong>Sérénité :</strong> vos postes, serveurs et outils Microsoft 365 sont surveillés en continu.
             </p>
 
             <p>
-              <strong>Réactivité :</strong> prise en charge immédiate en télémaintenance, et intervention sur site si nécessaire.
+              <strong>Réactivité :</strong> télémaintenance immédiate, déplacements si nécessaire.
             </p>
 
             <p>
-              <strong>Sécurité renforcée :</strong> antivirus EDR, durcissement des postes, sauvegardes automatisées et tests réguliers.
+              <strong>Sécurité renforcée :</strong> antivirus EDR, durcissement, sauvegardes testées.
             </p>
 
             <p>
-              <strong>Maîtrise des coûts :</strong> contrat clair, forfait d’infogérance complet ou modèle à la demande.
+              <strong>Maîtrise des coûts :</strong> contrat clair, sans surprise.
             </p>
 
-            {/* DÉPANNAGE ET HELP DESK */}
             <h2 className="text-2xl font-semibold text-customblue mt-10">
               Support & dépannage rapide
             </h2>
 
             <p>
-              Notre équipe traite les demandes via <strong>télémaintenance</strong> pour une résolution rapide. Lorsque c’est
-              nécessaire, un technicien se déplace dans vos locaux selon vos <strong>engagements SLA</strong>.
+              Notre équipe traite les demandes via <strong>télémaintenance</strong> pour une
+              résolution rapide. Si nécessaire, un technicien intervient sur site selon vos <strong>SLA</strong>.
             </p>
 
             <p>
-              Chaque nouveau client bénéficie d’un onboarding structuré : <strong>audit du parc</strong>, inventaire, sécurisation,
-              configuration Microsoft 365, et mise à jour complète du matériel.
+              Onboarding structuré : <strong>audit</strong>, inventaire, sécurisation,
+              configuration Microsoft 365, mises à jour.
             </p>
 
             <p>
-              Un <strong>reporting mensuel</strong> vous donne une vision claire : incidents résolus, actions préventives,
-              correctifs, indicateurs de sécurité.
+              Un <strong>reporting mensuel</strong> vous fournit une vision claire :
+              incidents résolus, actions préventives, correctifs.
             </p>
 
-            {/* LES FORMES D'ACCOMPAGNEMENT */}
             <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Trois modes d’accompagnement
+              Modes d’accompagnement
             </h2>
 
             <ul className="list-disc pl-6 space-y-1">
-              <li>
-                <strong>Infogérance illimitée :</strong> prise en charge totale, interventions incluses.
-              </li>
-              <li>
-                <strong>Contrat d’assistance :</strong> support à la demande, idéal pour les petites structures.
-              </li>
-              <li>
-                <strong>Modèle hybride :</strong> prévention + interventions curatives selon votre volume.
-              </li>
+              <li><strong>Infogérance illimitée</strong></li>
+              <li><strong>Contrat d’assistance</strong> à la demande</li>
+              <li><strong>Modèle hybride</strong> préventif + curatif</li>
             </ul>
 
-            <p>
-              Dans tous les cas, nos engagements sont mesurables : baisse des incidents récurrents,
-              <strong> temps de rétablissement réduit</strong>, sauvegardes testées et amélioration continue.
+            <p className="mt-3">
+              Engagements mesurables : baisse des incidents récurrents,
+              <strong> rétablissement plus rapide</strong>, sauvegardes vérifiées.
             </p>
           </div>
 
@@ -112,18 +103,35 @@ export default function MaintenanceInformatique() {
               loading="lazy"
             />
             <figcaption className="text-sm text-gray-500 text-center mt-3">
-              Supervision, mises à jour et sécurité EDR pour un parc informatique parfaitement maîtrisé.
+              Supervision, sécurité EDR et maintenance proactive.
             </figcaption>
           </figure>
 
           {/* CTA */}
-          <div className="mt-10">
+          <div className="mt-8 space-y-4">
             <Link
               to="/contact"
               className="inline-block bg-customblue text-white px-5 py-3 rounded-lg"
             >
               Demander un devis
             </Link>
+
+            {/* ⭐ NOUVEAUX BOUTONS PACKS */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Link
+                to="/services/pack-essentiel"
+                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+              >
+                Découvrir le Pack Essentiel
+              </Link>
+
+              <Link
+                to="/services/pack-optimum"
+                className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+              >
+                Découvrir le Pack Optimum
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -148,7 +156,6 @@ export default function MaintenanceInformatique() {
                   key={c.slug}
                   to={`/villes/${c.slug}/maintenance-informatique`}
                   className="inline-flex items-center justify-center h-11 px-4 text-sm rounded-full bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-800"
-                  aria-label={`Maintenance informatique à ${c.name}`}
                 >
                   Maintenance à {c.name}
                 </Link>
