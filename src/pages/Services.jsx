@@ -55,7 +55,7 @@ export default function Services() {
             </ul>
 
             <a
-              href="/services/standards-telephoniques"
+              href="/services/StandardTelephone.jsx"
               className="w-full block bg-orange-300 text-white px-6 py-3 rounded-lg hover:bg-orange-400 font-semibold mb-3 text-center"
             >
               En savoir plus
