@@ -15,6 +15,42 @@ export default function TelephonieMobile() {
     <main>
       <Seo title={title} description={description} canonical={canonical} />
 
+      {/* NAVIGATION ENTRE SERVICES */}
+      <section className="bg-white pt-10 pb-4">
+        <div className="container mx-auto px-6 flex flex-wrap gap-3">
+
+          <Link
+            to="/services/standard-telephonique"
+            className="px-4 py-2 rounded-lg font-semibold bg-orange-100 text-orange-700 border border-orange-200"
+          >
+            Standards Téléphoniques
+          </Link>
+
+          {/* Actif = Téléphonie Mobile */}
+          <Link
+            to="/services/telephonie-mobile"
+            className="px-4 py-2 rounded-lg font-semibold text-white bg-blue-600 shadow"
+          >
+            Téléphonie Mobile
+          </Link>
+
+          <Link
+            to="/services/maintenance-informatique"
+            className="px-4 py-2 rounded-lg font-semibold bg-green-100 text-green-700 border border-green-200"
+          >
+            Maintenance Informatique
+          </Link>
+
+          <Link
+            to="/services/internet-fibre"
+            className="px-4 py-2 rounded-lg font-semibold bg-purple-100 text-purple-700 border border-purple-200"
+          >
+            Réseau & Connectivité
+          </Link>
+
+        </div>
+      </section>
+
       {/* HERO + CONTENU */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
@@ -23,8 +59,6 @@ export default function TelephonieMobile() {
           </h1>
 
           <div className="space-y-6 max-w-3xl text-gray-700 leading-relaxed">
-
-            {/* INTRO - SIMPLIFIÉ POUR TOUS */}
             <p>
               Nos solutions de <strong>téléphonie mobile professionnelle</strong> sont conçues pour être simples,
               économiques et fiables. Elles permettent aux collaborateurs de rester joignables partout tout en gardant
@@ -37,7 +71,6 @@ export default function TelephonieMobile() {
               et faciliter les déploiements.
             </p>
 
-            {/* AVANTAGES */}
             <h2 className="text-2xl font-semibold text-customblue mt-8">
               Les avantages pour votre entreprise
             </h2>
@@ -83,15 +116,15 @@ export default function TelephonieMobile() {
                     <td className="px-4 py-3 font-semibold">8 €</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">VOIX / SMS / MMS + 20 Go (5G inclus)*</td>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 20 Go (5G incluse)*</td>
                     <td className="px-4 py-3 font-semibold">12 €</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">VOIX / SMS / MMS + 50 Go (5G inclus)*</td>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 50 Go (5G incluse)*</td>
                     <td className="px-4 py-3 font-semibold">16 €</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3">VOIX / SMS / MMS + 100 Go (5G inclus)*</td>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 100 Go (5G incluse)*</td>
                     <td className="px-4 py-3 font-semibold">21 €</td>
                   </tr>
                 </tbody>
@@ -100,7 +133,6 @@ export default function TelephonieMobile() {
 
           </div>
 
-          {/* IMAGE */}
           <figure className="mt-10">
             <img
               src="/gsm.jpg"
@@ -115,7 +147,6 @@ export default function TelephonieMobile() {
             </figcaption>
           </figure>
 
-          {/* CTA */}
           <div className="mt-10">
             <Link
               to="/contact"
@@ -131,11 +162,11 @@ export default function TelephonieMobile() {
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
           
-          {/* Colonne principale */}
           <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
             <h2 className="text-2xl font-semibold text-customblue">
               Villes desservies en Hauts-de-France
             </h2>
+
             <p className="text-gray-700 mt-2">
               Sélectionnez votre ville pour une page locale dédiée à la <strong>téléphonie mobile pro</strong>.
             </p>
@@ -146,7 +177,6 @@ export default function TelephonieMobile() {
                   key={c.slug}
                   to={`/villes/${c.slug}/telephonie-mobile`}
                   className="inline-flex items-center justify-center h-11 px-4 text-sm rounded-full bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-800"
-                  aria-label={`Téléphonie mobile à ${c.name}`}
                 >
                   Mobile pro à {c.name}
                 </Link>
@@ -160,12 +190,11 @@ export default function TelephonieMobile() {
             </div>
           </div>
 
-          {/* Colonne latérale */}
           <aside className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-semibold text-customblue">Accès rapide</h3>
 
             <ul className="mt-3 space-y-2">
-              {["lille", "amiens", "roubaix", "tourcoing", "valenciennes", "arras"]
+              {["lille", "amiens", "roubaix", "tourcoing", "valamniennes", "arras"]
                 .map((slug) => CITIES.find((c) => c.slug === slug))
                 .filter(Boolean)
                 .map((c) => (
