@@ -18,9 +18,26 @@ export default function PackOptimum() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
 
-          <h1 className="text-4xl font-bold text-customblue mb-4">
+          <h1 className="text-4xl font-bold text-customblue mb-6">
             Offre Pack Optimum
           </h1>
+
+          {/* ⭐ Boutons navigation croisée */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <Link
+              to="/services/maintenance-informatique"
+              className="w-full sm:w-auto bg-gray-300 hover:bg-gray-400 text-gray-900 px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Retour à la maintenance
+            </Link>
+
+            <Link
+              to="/services/pack-essentiel"
+              className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Voir le Pack Essentiel
+            </Link>
+          </div>
 
           {/* Accroche marketing */}
           <p className="text-gray-700 max-w-3xl mb-6 leading-relaxed">
@@ -55,17 +72,20 @@ export default function PackOptimum() {
             </h2>
 
             <p>
-              Avec le Pack Optimum, vous bénéficiez d’un <strong>SOC</strong>, un centre de cybersécurité qui analyse en temps réel toutes les activités de votre système. Il détecte les intrusions, les comportements suspects et les tentatives d’attaque avant qu’elles n’impactent votre activité.
+              Avec le Pack Optimum, vous bénéficiez d’un <strong>SOC</strong>, un centre de cybersécurité
+              qui analyse en temps réel toutes les activités de votre système. Il détecte les intrusions,
+              comportements suspects et tentatives d’attaque avant qu’elles n’impactent votre activité.
             </p>
 
             <p className="mt-3">
-              Grâce à l’analyse comportementale, l’intelligence artificielle et la corrélation d’événements, vos systèmes sont protégés en permanence, même contre les menaces inconnues.
+              Grâce à l’analyse comportementale, à l’IA et à la corrélation d’événements,
+              vos systèmes sont protégés même contre les menaces inconnues.
             </p>
 
             <ul className="list-disc pl-6 mt-3 space-y-1">
               <li>Surveillance continue 24/7, week-ends et jours fériés</li>
               <li>Détection proactive des menaces avancées</li>
-              <li>Réponse immédiate aux incidents</li>
+              <li>Intervention immédiate en cas d’incident</li>
               <li>Protection renforcée des données et systèmes</li>
             </ul>
           </div>
@@ -77,13 +97,12 @@ export default function PackOptimum() {
             </h2>
 
             <p>
-              Vous disposez d’un tableau de bord complet regroupant l’état global de votre sécurité :
-              alertes détectées, incidents bloqués, tendances, statistiques et actions menées par nos équipes.
+              Un tableau de bord complet centralise toutes les informations : alertes, incidents bloqués,
+              tendances de sécurité, statistiques, actions menées par nos analystes.
             </p>
 
             <p className="mt-3">
-              Ce reporting vous permet de suivre en temps réel la cybersécurité de votre entreprise avec
-              une transparence totale.
+              Vous gardez une visibilité totale sur l’état de votre cybersécurité, en temps réel.
             </p>
           </div>
 
@@ -94,19 +113,19 @@ export default function PackOptimum() {
             </h2>
 
             <p>
-              Votre système informatique implique plusieurs acteurs : logiciels métiers, hébergeurs,
-              fournisseurs réseau, cloud, téléphonie… Le Pack Optimum inclut une coordination complète
-              afin de maintenir une cohérence parfaite.
+              Votre entreprise repose sur plusieurs acteurs : logiciels métiers, hébergeur,
+              opérateur fibre, fournisseur cloud, téléphonie… Le Pack Optimum inclut une
+              coordination centralisée afin d’assurer une cohérence parfaite.
             </p>
 
             <p className="mt-3">
-              Nous fournissons des outils sécurisés pour partager les bonnes informations avec vos autres
-              prestataires, centraliser les actions et éviter les erreurs ou interventions contradictoires.
+              Nous mettons en place des outils sécurisés pour fluidifier les échanges techniques,
+              éviter les conflits entre prestataires et garantir un fonctionnement harmonieux.
             </p>
 
             <p className="mt-3">
-              Chaque partenaire intervient dans un cadre sécurisé, garantissant un environnement stable,
-              homogène et parfaitement protégé.
+              L’ensemble de votre écosystème informatique fonctionne ainsi dans un cadre
+              sécurisé, contrôlé et parfaitement homogène.
             </p>
           </div>
 
