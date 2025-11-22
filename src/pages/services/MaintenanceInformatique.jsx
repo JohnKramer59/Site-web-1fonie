@@ -18,11 +18,31 @@ export default function MaintenanceInformatique() {
       {/* HERO + CONTENU */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
+          
           <h1 className="text-4xl font-bold text-customblue mb-6">
             Maintenance informatique / Infogérance
           </h1>
 
+          {/* ⭐ BOUTONS PACKS (TOP DE PAGE) */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <Link
+              to="/services/pack-essentiel"
+              className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Voir le Pack Essentiel
+            </Link>
+
+            <Link
+              to="/services/pack-optimum"
+              className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
+            >
+              Voir le Pack Optimum
+            </Link>
+          </div>
+
+          {/* CONTENU PRINCIPAL */}
           <div className="space-y-6 max-w-3xl text-gray-700 leading-relaxed">
+
             <p>
               Notre service de <strong>maintenance informatique</strong> permet aux TPE et PME de disposer
               d’un parc informatique stable, sécurisé et opérationnel en permanence.
@@ -41,29 +61,17 @@ export default function MaintenanceInformatique() {
               Les avantages pour votre entreprise
             </h2>
 
-            <p>
-              <strong>Sérénité :</strong> vos postes, serveurs et outils Microsoft 365 sont surveillés en continu.
-            </p>
-
-            <p>
-              <strong>Réactivité :</strong> télémaintenance immédiate, déplacements si nécessaire.
-            </p>
-
-            <p>
-              <strong>Sécurité renforcée :</strong> antivirus EDR, durcissement, sauvegardes testées.
-            </p>
-
-            <p>
-              <strong>Maîtrise des coûts :</strong> contrat clair, sans surprise.
-            </p>
+            <p><strong>Sérénité :</strong> vos postes, serveurs et Microsoft 365 sont surveillés en continu.</p>
+            <p><strong>Réactivité :</strong> télémaintenance immédiate, déplacement si nécessaire.</p>
+            <p><strong>Sécurité renforcée :</strong> antivirus EDR, durcissement, sauvegardes testées.</p>
+            <p><strong>Maîtrise des coûts :</strong> contrat clair, sans surprise.</p>
 
             <h2 className="text-2xl font-semibold text-customblue mt-10">
               Support & dépannage rapide
             </h2>
 
             <p>
-              Notre équipe traite les demandes via <strong>télémaintenance</strong> pour une
-              résolution rapide. Si nécessaire, un technicien intervient sur site selon vos <strong>SLA</strong>.
+              Notre équipe traite les demandes via <strong>télémaintenance</strong>. Si nécessaire, un technicien se déplace selon vos <strong>SLA</strong>.
             </p>
 
             <p>
@@ -72,8 +80,8 @@ export default function MaintenanceInformatique() {
             </p>
 
             <p>
-              Un <strong>reporting mensuel</strong> vous fournit une vision claire :
-              incidents résolus, actions préventives, correctifs.
+              Un <strong>reporting mensuel</strong> fournit une vision claire : incidents résolus,
+              actions préventives, correctifs.
             </p>
 
             <h2 className="text-2xl font-semibold text-customblue mt-10">
@@ -88,7 +96,7 @@ export default function MaintenanceInformatique() {
 
             <p className="mt-3">
               Engagements mesurables : baisse des incidents récurrents,
-              <strong> rétablissement plus rapide</strong>, sauvegardes vérifiées.
+              <strong> rétablissement rapide</strong>, sauvegardes vérifiées.
             </p>
           </div>
 
@@ -107,31 +115,14 @@ export default function MaintenanceInformatique() {
             </figcaption>
           </figure>
 
-          {/* CTA */}
-          <div className="mt-8 space-y-4">
+          {/* CTA PRINCIPAL */}
+          <div className="mt-10">
             <Link
               to="/contact"
               className="inline-block bg-customblue text-white px-5 py-3 rounded-lg"
             >
               Demander un devis
             </Link>
-
-            {/* ⭐ NOUVEAUX BOUTONS PACKS */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Link
-                to="/services/pack-essentiel"
-                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
-              >
-                Découvrir le Pack Essentiel
-              </Link>
-
-              <Link
-                to="/services/pack-optimum"
-                className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-semibold text-center"
-              >
-                Découvrir le Pack Optimum
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -140,14 +131,12 @@ export default function MaintenanceInformatique() {
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
           
-          {/* Colonne principale */}
           <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
             <h2 className="text-2xl font-semibold text-customblue">
               Villes desservies en Hauts-de-France
             </h2>
             <p className="text-gray-700 mt-2">
-              Sélectionnez votre ville pour la page locale dédiée à la
-              <strong> maintenance informatique</strong>.
+              Sélectionnez votre ville pour la page locale dédiée à la <strong>maintenance informatique</strong>.
             </p>
 
             <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -169,7 +158,7 @@ export default function MaintenanceInformatique() {
             </div>
           </div>
 
-          {/* Colonne latérale */}
+          {/* Sidebar */}
           <aside className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-semibold text-customblue">Accès rapide</h3>
 
@@ -191,7 +180,7 @@ export default function MaintenanceInformatique() {
 
             <div className="mt-6 border-t border-gray-100 pt-6">
               <p className="text-sm text-gray-600">
-                Support rapide, supervision continue, sécurité avancée, dépannage à distance ou sur site.
+                Support rapide, supervision continue, sécurité avancée.
               </p>
               <Link
                 to="/contact"
