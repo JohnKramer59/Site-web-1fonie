@@ -1,19 +1,24 @@
+// src/App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
 
 // Pages existantes
 import Home from "./pages/Home.jsx";
-import Services from "./pages/Services.jsx"; // TON fichier existant
-import Contact from "./pages/Contact";       // via wrapper index.js si présent
+import Services from "./pages/Services.jsx";
+import Contact from "./pages/Contact";
 
-// Piliers service (dossiers /pages/services/* fournis)
+// Piliers service
 import StandardTelephone from "./pages/services/StandardTelephone.jsx";
 import MaintenanceInformatique from "./pages/services/MaintenanceInformatique.jsx";
 import TelephonieMobile from "./pages/services/TelephonieMobile.jsx";
 import InternetFibre from "./pages/services/InternetFibre.jsx";
 
-// SEO local (dossiers /pages/villes/* fournis)
+// Packs maintenance
+import PackEssentiel from "./pages/services/PackEssentiel.jsx";
+import PackOptimum from "./pages/services/PackOptimum.jsx";
+
+// SEO local
 import Cities from "./pages/villes/Cities.jsx";
 import City from "./pages/villes/City.jsx";
 import CityService from "./pages/villes/CityService.jsx";
@@ -36,14 +41,18 @@ export default function App() {
           {/* Accueil */}
           <Route path="/" element={<Home />} />
 
-          {/* Sommaire services = TON fichier existant */}
+          {/* Sommaire Services */}
           <Route path="/services" element={<Services />} />
 
-          {/* Piliers service détaillés */}
+          {/* Services détaillés */}
           <Route path="/services/standard-telephonique" element={<StandardTelephone />} />
           <Route path="/services/maintenance-informatique" element={<MaintenanceInformatique />} />
           <Route path="/services/telephonie-mobile" element={<TelephonieMobile />} />
           <Route path="/services/internet-fibre" element={<InternetFibre />} />
+
+          {/* PACKS Maintenance */}
+          <Route path="/services/pack-essentiel" element={<PackEssentiel />} />
+          <Route path="/services/pack-optimum" element={<PackOptimum />} />
 
           {/* SEO local */}
           <Route path="/villes" element={<Cities />} />
