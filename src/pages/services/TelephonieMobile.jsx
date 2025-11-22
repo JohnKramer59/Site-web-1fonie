@@ -8,86 +8,133 @@ import { siteUrl } from "../../seo/schema.js";
 export default function TelephonieMobile() {
   const title = "Téléphonie mobile entreprise | 1FONIE Pro";
   const description =
-    "Forfaits mobiles pro 4G/5G, eSIM, gestion de flotte, MDM, roaming, leasing terminaux et suivi de consommation. Déploiement rapide. Devis 24h.";
+    "Forfaits mobiles pro simples et fiables : 4G/5G, eSIM, gestion de flotte, MDM, smartphones en leasing et suivi des consommations. Déploiement rapide.";
   const canonical = `${siteUrl}/services/telephonie-mobile`;
-
-  const P1 = (
-    <p className="text-gray-700">
-      La <strong>téléphonie mobile entreprise</strong> doit être fiable, maîtrisée et adaptée aux usages terrain.
-      Nous proposons des <strong>forfaits mobiles pro</strong> 4G/5G avec <strong>eSIM</strong> et options <strong>roaming</strong>,
-      un APN pro si besoin, et un tableau de bord de <strong>suivi de consommation</strong> pour prévenir les dépassements.
-      L’objectif: continuité de service, coûts prévisibles et une mise en service rapide pour chaque collaborateur.
-    </p>
-  );
-
-  const P2 = (
-    <p className="text-gray-700">
-      La <strong>gestion de flotte</strong> centralise lignes, options et terminaux. Avec le <strong>MDM</strong> (Mobile Device
-      Management), nous appliquons chiffrement, codes de verrouillage, inventaire, politiques d’apps et
-      effacement à distance en cas de perte. Prise en charge BYOD ou terminaux dédiés, profils par métier,
-      et automatisation de l’onboarding pour réduire les temps d’attente.
-    </p>
-  );
-
-  const P3 = (
-    <p className="text-gray-700">
-      Côté matériel, nous fournissons un catalogue de smartphones avec <strong>leasing</strong> et SAV.
-      Déploiement en 3 étapes: qualification des besoins, portabilité des numéros si nécessaire, puis
-      configuration MDM et livraison prête à l’emploi. Résultat: une flotte homogène, sécurisée et pilotée,
-      au service des usages de vos équipes.
-    </p>
-  );
 
   return (
     <main>
       <Seo title={title} description={description} canonical={canonical} />
 
-      {/* Hero + contenu */}
+      {/* HERO + CONTENU */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold text-customblue mb-4">
+          <h1 className="text-4xl font-bold text-customblue mb-6">
             Téléphonie mobile entreprise
           </h1>
 
-          <div className="space-y-4 max-w-3xl">
-            {P1}
-            {P2}
-            {P3}
+          <div className="space-y-6 max-w-3xl text-gray-700 leading-relaxed">
+
+            {/* INTRO - SIMPLIFIÉ POUR TOUS */}
+            <p>
+              Nos solutions de <strong>téléphonie mobile professionnelle</strong> sont conçues pour être simples,
+              économiques et fiables. Elles permettent aux collaborateurs de rester joignables partout tout en gardant
+              un contrôle total des coûts pour l’entreprise.
+            </p>
+
+            <p>
+              Nous proposons des <strong>forfaits 4G/5G</strong> avec eSIM, un suivi de consommation en temps réel
+              et des options roaming entièrement maîtrisées. Objectif : éviter les surcoûts, garantir la disponibilité
+              et faciliter les déploiements.
+            </p>
+
+            {/* AVANTAGES */}
+            <h2 className="text-2xl font-semibold text-customblue mt-8">
+              Les avantages pour votre entreprise
+            </h2>
+
+            <p>
+              <strong>Économies :</strong> abonnements adaptés aux usages, alertes en cas de dépassement,
+              forfaits DATA seuls possibles, leasing des smartphones pour éviter les achats coûteux.
+            </p>
+
+            <p>
+              <strong>Simplicité :</strong> activation rapide des lignes, eSIM immédiate,
+              portail de gestion clair, configuration prête à l’emploi, support unique.
+            </p>
+
+            <p>
+              <strong>Fiabilité :</strong> réseau 4G/5G performant, roaming sécurisé, et smartphones supervisés pour éviter les risques.
+            </p>
+
+            {/* GESTION DE FLOTTE / MDM */}
+            <h2 className="text-2xl font-semibold text-customblue mt-10">
+              Gestion de flotte & sécurité (MDM)
+            </h2>
+
+            <p>
+              Notre <strong>gestion de flotte mobile</strong> vous permet d’administrer l’ensemble des lignes,
+              terminaux et options depuis un tableau de bord centralisé. Avec le <strong>MDM</strong>, nous pouvons
+              sécuriser tous les appareils : chiffrement, verrouillage, inventaire du matériel, gestion des applications
+              et effacement à distance en cas de perte ou de vol.
+            </p>
+
+            <p>
+              L’entreprise garde le contrôle, sans complexité, et les utilisateurs disposent d’un téléphone sécurisé dès la première utilisation.
+            </p>
+
+            {/* MATERIEL + DÉPLOIEMENT */}
+            <h2 className="text-2xl font-semibold text-customblue mt-10">
+              Smartphones & déploiement clé en main
+            </h2>
+
+            <p>
+              Nous proposons un catalogue de smartphones récents avec <strong>leasing</strong> (location longue durée)
+              afin d’éviter les gros achats initiaux. Le matériel est livré déjà configuré, prêt à l’emploi.
+            </p>
+
+            <p>
+              La mise en place se fait en <strong>3 étapes simples</strong> :
+            </p>
+
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Qualification des besoins ligne par ligne.</li>
+              <li>Portabilité de vos anciens numéros si nécessaire.</li>
+              <li>Configuration MDM / eSIM / applications métiers puis livraison prête.</li>
+            </ul>
+
+            <p>
+              Résultat : une flotte homogène, sécurisée, simple à gérer et parfaitement adaptée aux usages terrain.
+            </p>
           </div>
 
-          {/* Image après les 3 paragraphes */}
-          <figure className="mt-8">
+          {/* IMAGE */}
+          <figure className="mt-10">
             <img
               src="/gsm.jpg"
-              alt="Gestion de flotte mobile, eSIM et MDM pour entreprises"
+              alt="Téléphonie mobile entreprise, gestion de flotte et MDM"
               width="1280"
               height="720"
               className="w-full max-w-4xl rounded-xl shadow-lg mx-auto object-cover"
               loading="lazy"
             />
             <figcaption className="text-sm text-gray-500 text-center mt-3">
-              Forfaits 4G/5G, eSIM, MDM et suivi conso pour une flotte mobile maîtrisée.
+              Gestion de flotte, sécurité MDM, eSIM, roaming et suivi de consommation en temps réel.
             </figcaption>
           </figure>
 
-          <div className="mt-8">
-            <Link to="/contact" className="inline-block bg-customblue text-white px-5 py-3 rounded-lg">
+          {/* CTA */}
+          <div className="mt-10">
+            <Link
+              to="/contact"
+              className="inline-block bg-customblue text-white px-5 py-3 rounded-lg"
+            >
               Demander un devis
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Villes — présentation épurée */}
+      {/* VILLES */}
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
+          
           {/* Colonne principale */}
           <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
             <h2 className="text-2xl font-semibold text-customblue">
               Villes desservies en Hauts-de-France
             </h2>
             <p className="text-gray-700 mt-2">
-              Sélectionnez votre ville pour la page locale dédiée à la <strong>téléphonie mobile pro</strong>.
+              Sélectionnez votre ville pour une page locale dédiée à la <strong>téléphonie mobile pro</strong>.
             </p>
 
             <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -110,9 +157,10 @@ export default function TelephonieMobile() {
             </div>
           </div>
 
-          {/* Colonne latérale compacte */}
+          {/* Colonne latérale */}
           <aside className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-semibold text-customblue">Accès rapide</h3>
+
             <ul className="mt-3 space-y-2">
               {["lille", "amiens", "roubaix", "tourcoing", "valenciennes", "arras"]
                 .map((slug) => CITIES.find((c) => c.slug === slug))
@@ -131,7 +179,7 @@ export default function TelephonieMobile() {
 
             <div className="mt-6 border-t border-gray-100 pt-6">
               <p className="text-sm text-gray-600">
-                Gestion de flotte, MDM, eSIM, roaming, monitoring des coûts et portabilité des numéros.
+                Forfaits pro, eSIM, roaming, sécurité MDM, leasing smartphones et supervision des usages.
               </p>
               <Link
                 to="/contact"
