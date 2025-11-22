@@ -15,6 +15,42 @@ export default function MaintenanceInformatique() {
     <main>
       <Seo title={title} description={description} canonical={canonical} />
 
+      {/* NAVIGATION ENTRE SERVICES */}
+      <section className="bg-white pt-10 pb-4">
+        <div className="container mx-auto px-6 flex flex-wrap gap-3">
+
+          <Link
+            to="/services/standard-telephonique"
+            className="px-4 py-2 rounded-lg font-semibold bg-orange-100 text-orange-700 border border-orange-200"
+          >
+            Standards Téléphoniques
+          </Link>
+
+          <Link
+            to="/services/telephonie-mobile"
+            className="px-4 py-2 rounded-lg font-semibold bg-blue-100 text-blue-700 border border-blue-200"
+          >
+            Téléphonie Mobile
+          </Link>
+
+          {/* Actif = Maintenance */}
+          <Link
+            to="/services/maintenance-informatique"
+            className="px-4 py-2 rounded-lg font-semibold text-white bg-green-600 shadow"
+          >
+            Maintenance Informatique
+          </Link>
+
+          <Link
+            to="/services/internet-fibre"
+            className="px-4 py-2 rounded-lg font-semibold bg-purple-100 text-purple-700 border border-purple-200"
+          >
+            Réseau & Connectivité
+          </Link>
+
+        </div>
+      </section>
+
       {/* HERO + CONTENU */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
