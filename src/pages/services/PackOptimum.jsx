@@ -17,24 +17,28 @@ export default function PackOptimum() {
       {/* HERO */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
+
           <h1 className="text-4xl font-bold text-customblue mb-4">
             Offre Pack Optimum
           </h1>
 
-          <p className="text-gray-700 max-w-3xl">
-            Le Pack Optimum apporte une cybersécurité de niveau entreprise : surveillance 24/7,
-            réponse aux incidents en temps réel, analyse comportementale, coordination technique
-            et reporting complet. Une protection maximale pour les structures qui ne peuvent se
-            permettre aucune interruption.
+          {/* Accroche marketing */}
+          <p className="text-gray-700 max-w-3xl mb-6 leading-relaxed">
+            <strong>
+              Le Pack Optimum inclut tout le Pack Essentiel, mais va beaucoup plus loin :
+              surveillance 24/7, SOC, analyse comportementale, coordination prestataires et
+              reporting avancé. C’est la protection la plus complète pour les entreprises qui ne peuvent
+              se permettre aucune interruption.
+            </strong>
           </p>
 
-          {/* PRIX */}
-          <div className="bg-gray-50 p-6 mt-8 rounded-xl max-w-3xl">
+          {/* Prix */}
+          <div className="bg-gray-50 p-6 mt-6 rounded-xl max-w-3xl">
             <h2 className="text-2xl font-semibold text-customblue mb-2">
               À partir de <strong>89 € / poste / mois</strong>
             </h2>
             <p className="text-gray-700">
-              Idéal pour les entreprises nécessitant un haut niveau de sécurité et de supervision.
+              Pour les structures nécessitant un niveau de cybersécurité premium et une supervision totale.
             </p>
           </div>
         </div>
@@ -49,39 +53,37 @@ export default function PackOptimum() {
             <h2 className="text-2xl font-semibold text-customblue mb-3">
               Surveillance et protection 24/7 (SOC)
             </h2>
+
             <p>
-              Face aux cybermenaces actuelles, une protection classique ne suffit plus.
-              Avec le Pack Optimum, vous bénéficiez d’un <strong>SOC (Security Operations Center)</strong>,
-              un centre de cybersécurité dédié qui surveille votre système en continu.
+              Avec le Pack Optimum, vous bénéficiez d’un <strong>SOC</strong>, un centre de cybersécurité qui analyse en temps réel toutes les activités de votre système. Il détecte les intrusions, les comportements suspects et les tentatives d’attaque avant qu’elles n’impactent votre activité.
             </p>
+
             <p className="mt-3">
-              Nos analystes examinent en temps réel les journaux systèmes, détectent les comportements
-              suspects et neutralisent les menaces avant qu’elles n’impactent votre activité.
-              Intelligence artificielle, analyse comportementale et corrélation d’événements garantissent
-              une protection maximale.
+              Grâce à l’analyse comportementale, l’intelligence artificielle et la corrélation d’événements, vos systèmes sont protégés en permanence, même contre les menaces inconnues.
             </p>
 
             <ul className="list-disc pl-6 mt-3 space-y-1">
-              <li>Surveillance en temps réel 24/7, jours fériés inclus</li>
-              <li>Analyse proactive pour anticiper les attaques</li>
+              <li>Surveillance continue 24/7, week-ends et jours fériés</li>
+              <li>Détection proactive des menaces avancées</li>
               <li>Réponse immédiate aux incidents</li>
-              <li>Protection continue des données et systèmes</li>
+              <li>Protection renforcée des données et systèmes</li>
             </ul>
           </div>
 
-          {/* TABLEAUX DE BORD */}
+          {/* RAPPORTS */}
           <div>
             <h2 className="text-2xl font-semibold text-customblue mb-3">
               Rapports et tableaux de bord
             </h2>
+
             <p>
-              Vous accédez à un tableau de bord complet regroupant toutes les informations liées à
-              votre cybersécurité : alertes détectées, incidents bloqués, actions menées par nos experts,
-              état global des postes et serveurs.
+              Vous disposez d’un tableau de bord complet regroupant l’état global de votre sécurité :
+              alertes détectées, incidents bloqués, tendances, statistiques et actions menées par nos équipes.
             </p>
+
             <p className="mt-3">
-              Ce reporting transparent vous permet de suivre en temps réel la sécurité de votre
-              infrastructure et de prendre des décisions éclairées.
+              Ce reporting vous permet de suivre en temps réel la cybersécurité de votre entreprise avec
+              une transparence totale.
             </p>
           </div>
 
@@ -90,18 +92,21 @@ export default function PackOptimum() {
             <h2 className="text-2xl font-semibold text-customblue mb-3">
               Coordination prestataires & partenaires
             </h2>
+
             <p>
-              Votre informatique implique plusieurs intervenants : hébergeur, éditeur métier, fournisseur
-              télécom, prestataire réseau, expert-comptable… Pour éviter les erreurs et garantir une
-              cohérence technique, nous assurons la coordination entre tous vos prestataires.
+              Votre système informatique implique plusieurs acteurs : logiciels métiers, hébergeurs,
+              fournisseurs réseau, cloud, téléphonie… Le Pack Optimum inclut une coordination complète
+              afin de maintenir une cohérence parfaite.
             </p>
+
             <p className="mt-3">
-              Nous fournissons des outils sécurisés permettant de partager les bonnes informations,
-              centraliser les interventions et garantir un environnement harmonisé et sécurisé.
+              Nous fournissons des outils sécurisés pour partager les bonnes informations avec vos autres
+              prestataires, centraliser les actions et éviter les erreurs ou interventions contradictoires.
             </p>
+
             <p className="mt-3">
-              Chaque intervenant dispose d’un cadre clair, ce qui assure un fonctionnement optimal
-              sans jamais compromettre l’intégrité de votre système.
+              Chaque partenaire intervient dans un cadre sécurisé, garantissant un environnement stable,
+              homogène et parfaitement protégé.
             </p>
           </div>
 
@@ -114,12 +119,12 @@ export default function PackOptimum() {
           <figure>
             <img
               src="/pcsecure.jpg"
-              alt="Pack Optimum - Surveillance 24/7 et cybersécurité avancée"
+              alt="Pack Optimum - Cybersécurité avancée"
               className="w-full max-w-4xl rounded-xl shadow-lg mx-auto object-cover"
               loading="lazy"
             />
             <figcaption className="text-sm text-gray-500 text-center mt-3">
-              SOC 24/7, analyse comportementale, coordination prestataires : la cybersécurité de niveau entreprise.
+              SOC, analyse comportementale et supervision complète.
             </figcaption>
           </figure>
 
