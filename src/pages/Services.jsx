@@ -55,7 +55,7 @@ export default function Services() {
             </ul>
 
             <a
-              href="/services/StandardTelephone.jsx"
+              href="/services/standard-telephonique"
               className="w-full block bg-orange-300 text-white px-6 py-3 rounded-lg hover:bg-orange-400 font-semibold mb-3 text-center"
             >
               En savoir plus
@@ -95,7 +95,7 @@ export default function Services() {
             </ul>
 
             <a
-              href="/services/TelephonieMobile"
+              href="/services/telephonie-mobile"
               className="w-full block bg-blue-300 text-white px-6 py-3 rounded-lg hover:bg-blue-400 font-semibold mb-3 text-center"
             >
               En savoir plus
@@ -179,7 +179,7 @@ export default function Services() {
             </ul>
 
             <a
-              href="/services/reseau-connectivite"
+              href="/services/internet-fibre"
               className="w-full block bg-purple-300 text-white px-6 py-3 rounded-lg hover:bg-purple-400 font-semibold mb-3 text-center"
             >
               En savoir plus
