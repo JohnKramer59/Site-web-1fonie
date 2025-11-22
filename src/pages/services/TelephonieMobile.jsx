@@ -56,45 +56,48 @@ export default function TelephonieMobile() {
               <strong>Fiabilité :</strong> réseau 4G/5G performant, roaming sécurisé, et smartphones supervisés pour éviter les risques.
             </p>
 
-            {/* GESTION DE FLOTTE / MDM */}
+            {/* TABLEAU DES FORFAITS */}
             <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Gestion de flotte & sécurité (MDM)
+              Forfaits mobiles professionnels
             </h2>
 
-            <p>
-              Notre <strong>gestion de flotte mobile</strong> vous permet d’administrer l’ensemble des lignes,
-              terminaux et options depuis un tableau de bord centralisé. Avec le <strong>MDM</strong>, nous pouvons
-              sécuriser tous les appareils : chiffrement, verrouillage, inventaire du matériel, gestion des applications
-              et effacement à distance en cas de perte ou de vol.
-            </p>
+            <div className="overflow-x-auto mt-4">
+              <table className="w-full border border-gray-200 rounded-lg overflow-hidden text-sm">
+                <thead className="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th className="px-4 py-3 text-left">Forfait</th>
+                    <th className="px-4 py-3 text-left">Prix HT / mois</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS – sans data</td>
+                    <td className="px-4 py-3 font-semibold">5,5 €</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 1 Go</td>
+                    <td className="px-4 py-3 font-semibold">6 €</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 5 Go</td>
+                    <td className="px-4 py-3 font-semibold">8 €</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 20 Go (5G inclus)*</td>
+                    <td className="px-4 py-3 font-semibold">12 €</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 50 Go (5G inclus)*</td>
+                    <td className="px-4 py-3 font-semibold">16 €</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">VOIX / SMS / MMS + 100 Go (5G inclus)*</td>
+                    <td className="px-4 py-3 font-semibold">21 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            <p>
-              L’entreprise garde le contrôle, sans complexité, et les utilisateurs disposent d’un téléphone sécurisé dès la première utilisation.
-            </p>
-
-            {/* MATERIEL + DÉPLOIEMENT */}
-            <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Smartphones & déploiement clé en main
-            </h2>
-
-            <p>
-              Nous proposons un catalogue de smartphones récents avec <strong>leasing</strong> (location longue durée)
-              afin d’éviter les gros achats initiaux. Le matériel est livré déjà configuré, prêt à l’emploi.
-            </p>
-
-            <p>
-              La mise en place se fait en <strong>3 étapes simples</strong> :
-            </p>
-
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Qualification des besoins ligne par ligne.</li>
-              <li>Portabilité de vos anciens numéros si nécessaire.</li>
-              <li>Configuration MDM / eSIM / applications métiers puis livraison prête.</li>
-            </ul>
-
-            <p>
-              Résultat : une flotte homogène, sécurisée, simple à gérer et parfaitement adaptée aux usages terrain.
-            </p>
           </div>
 
           {/* IMAGE */}
