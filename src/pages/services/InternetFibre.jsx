@@ -8,132 +8,105 @@ import { siteUrl } from "../../seo/schema.js";
 export default function InternetFibre() {
   const title = "Internet fibre & Réseau d’entreprise | 1FONIE Pro";
   const description =
-    "Internet fibre pro FTTH/FTTO, réseau d’entreprise fiable, Wi-Fi 6/7, routeurs, sécurité et redondance 4G/5G. Réseau stable et sécurisé pour TPE/PME.";
+    "Fibre pro FTTH/FTTO, IP fixe, routeurs, Wi-Fi 6/7, redondance 4G/5G, SD-WAN, VLAN et supervision. Réseau fiable, sécurisé et performant.";
   const canonical = `${siteUrl}/services/internet-fibre`;
 
   return (
     <main>
       <Seo title={title} description={description} canonical={canonical} />
 
+      {/* NAVIGATION ENTRE SERVICES */}
+      <section className="bg-white pt-10 pb-4">
+        <div className="container mx-auto px-6 flex flex-wrap gap-3">
+
+          <Link
+            to="/services/standard-telephonique"
+            className="px-4 py-2 rounded-lg font-semibold bg-orange-100 text-orange-700 border border-orange-200"
+          >
+            Standards Téléphoniques
+          </Link>
+
+          <Link
+            to="/services/telephonie-mobile"
+            className="px-4 py-2 rounded-lg font-semibold bg-blue-100 text-blue-700 border border-blue-200"
+          >
+            Téléphonie Mobile
+          </Link>
+
+          <Link
+            to="/services/maintenance-informatique"
+            className="px-4 py-2 rounded-lg font-semibold bg-green-100 text-green-700 border border-green-200"
+          >
+            Maintenance Informatique
+          </Link>
+
+          {/* Actif = Internet Fibre */}
+          <Link
+            to="/services/internet-fibre"
+            className="px-4 py-2 rounded-lg font-semibold text-white bg-purple-600 shadow"
+          >
+            Réseau & Connectivité
+          </Link>
+
+        </div>
+      </section>
+
       {/* HERO + CONTENU */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
+
           <h1 className="text-4xl font-bold text-customblue mb-6">
             Internet fibre & Réseau d’entreprise
           </h1>
 
           <div className="space-y-6 max-w-3xl text-gray-700 leading-relaxed">
 
-            {/* INTRO SIMPLIFIÉE */}
             <p>
-              Nous construisons pour votre entreprise une connexion <strong>Internet fiable</strong> et un
-              <strong> réseau interne parfaitement stable</strong>. Que vous ayez besoin d’une fibre dédiée (FTTO) ou d’une
-              fibre mutualisée pro (FTTH), nous dimensionnons l’installation selon vos usages et vos contraintes.
+              Nous dimensionnons votre <strong>accès Internet professionnel</strong> et votre
+              <strong> réseau interne</strong> pour assurer performance, stabilité et sécurité. Fibre FTTH ou FTTO
+              selon les besoins, avec <strong>IP fixe</strong> et garanties opérateur adaptées à vos usages.
             </p>
 
             <p>
-              Notre approche vise trois objectifs : <strong>rapidité</strong>, <strong>fiabilité</strong> et
-              <strong> sécurité</strong>. Votre réseau devient un outil de travail performant, prêt pour la croissance
-              de votre entreprise.
+              Côté réseau local (LAN), nous installons <strong>routeurs</strong>, <strong>switchs managés</strong>,
+              <strong> VLAN</strong> pour segmenter les flux, et un <strong>monitoring avancé</strong> qui permet d’anticiper les
+              saturations et incidents.
             </p>
 
-            {/* AVANTAGES */}
-            <h2 className="text-2xl font-semibold text-customblue mt-8">
-              Les bénéfices pour votre entreprise
-            </h2>
-
-            <p>
-              <strong>Stabilité :</strong> connexions fibre pro, IP fixe, débit garanti selon l’offre, performance constante.
-            </p>
-
-            <p>
-              <strong>Continuité d’activité :</strong> redondance 4G/5G ou <strong>SD-WAN multi-liens</strong> avec bascule
-              automatique en cas de coupure.
-            </p>
-
-            <p>
-              <strong>Sécurité :</strong> pare-feu, segmentation réseau (VLAN), durcissement des configurations et
-              surveillance du trafic.
-            </p>
-
-            <p>
-              <strong>Productivité :</strong> Wi-Fi 6/7 rapide, couverture optimale et gestion centralisée des bornes.
-            </p>
-
-            {/* CONNECTIVITÉ FIBRE */}
             <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Connexion Internet professionnelle
+              Continuité d’activité & sécurité réseau
             </h2>
 
             <p>
-              Selon la taille de votre entreprise et vos besoins, nous proposons deux types d’accès :
+              Pour garantir la disponibilité, nous ajoutons une <strong>redondance 4G/5G</strong> ou
+              un <strong>SD-WAN multi-liens</strong> qui prend automatiquement le relais en cas de coupure.
             </p>
+
+            <p>
+              Nous déployons un <strong>Wi-Fi 6/7 haute densité</strong> avec contrôleur centralisé et
+              bornes PoE professionnelles. La <strong>QoS téléphonie</strong> assure une VoIP claire et sans coupure.
+            </p>
+
+            <p>
+              L’ensemble du réseau est protégé par : pare-feu, filtrage, sécurité renforcée et durcissement
+              des configurations.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-customblue mt-10">
+              Méthode de déploiement
+            </h2>
 
             <ul className="list-disc pl-6 space-y-1">
-              <li>
-                <strong>FTTH Pro :</strong> fibre économique, très haut débit, idéale pour la majorité des PME.
-              </li>
-              <li>
-                <strong>FTTO dédiée :</strong> lien professionnel garanti, symétrique, avec supervision et engagements forts (SLA).
-              </li>
+              <li>Étude d’éligibilité & tests de débit</li>
+              <li>Plan d’adressage & segmentation VLAN</li>
+              <li>Installation baie / câblage si nécessaire</li>
+              <li>Mise en service, configuration & recette</li>
+              <li>Documentation complète & supervision</li>
             </ul>
 
-            <p>
-              Chaque lien peut être configuré avec une <strong>IP fixe</strong>, indispensable pour la téléphonie VoIP,
-              les VPN, les caméras ou les serveurs internes.
-            </p>
-
-            {/* RÉSEAU LOCAL & WI-FI */}
-            <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Réseau interne & Wi-Fi professionnel
-            </h2>
-
-            <p>
-              Nous installons un réseau local conçu pour durer : <strong>routeurs pro</strong>,
-              <strong> switchs managés</strong>, segmentation <strong>VLAN</strong>, et <strong>QoS optimisée</strong> pour la téléphonie VoIP.
-            </p>
-
-            <p>
-              Le <strong>Wi-Fi 6/7</strong> offre un signal stable, une meilleure portée et un débit très élevé,
-              même en forte densité d’utilisateurs. Toutes les bornes sont contrôlées depuis une console unique.
-            </p>
-
-            {/* REDONDANCE ET SÉCURITÉ */}
-            <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Redondance & sécurité réseau
-            </h2>
-
-            <p>
-              Pour garantir votre activité même en cas de problème, nous mettons en place :
-            </p>
-
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Bascule automatique 4G/5G en cas de coupure fibre</li>
-              <li>SD-WAN multi-liens pour cumuler plusieurs connexions</li>
-              <li>Pare-feu professionnel et filtrage avancé</li>
-              <li>Surveillance et alertes réseau en temps réel</li>
-            </ul>
-
-            {/* MÉTHODE DE DÉPLOIEMENT */}
-            <h2 className="text-2xl font-semibold text-customblue mt-10">
-              Déploiement & méthode de travail
-            </h2>
-
-            <p>
-              Notre intervention suit un processus clair :
-            </p>
-
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Test d’éligibilité et <strong>étude de débit</strong></li>
-              <li>Plan d’adressage et segmentation du réseau</li>
-              <li>Installation des équipements (câblage, baie, routeur, switchs, bornes Wi-Fi)</li>
-              <li>Recette de performance et documentation</li>
-              <li><strong>Supervision</strong> continue pour garantir la stabilité</li>
-            </ul>
-
-            <p>
-              Résultat : un réseau <strong>rapide</strong>, <strong>fiable</strong> et <strong>sécurisé</strong>,
-              capable de supporter vos applications métier, votre téléphonie et la croissance de vos équipes.
+            <p className="mt-3">
+              Résultat : un réseau <strong>fiable</strong>, <strong>rapide</strong>,
+              <strong> sécurisé</strong> et prêt à suivre la croissance de votre entreprise.
             </p>
           </div>
 
@@ -141,14 +114,14 @@ export default function InternetFibre() {
           <figure className="mt-10">
             <img
               src="/baie.jpg"
-              alt="Installation réseau professionnel, baie de brassage et fibre"
+              alt="Baie de brassage et équipements réseau professionnels"
               width="1280"
               height="720"
               className="w-full max-w-4xl rounded-xl shadow-lg mx-auto object-cover"
               loading="lazy"
             />
             <figcaption className="text-sm text-gray-500 text-center mt-3">
-              Fibre pro FTTH/FTTO, Wi-Fi 6/7, routeurs et redondance 4G/5G pour une entreprise toujours connectée.
+              Fibre pro, SD-WAN, Wi-Fi 6/7, VLAN et supervision réseau.
             </figcaption>
           </figure>
 
@@ -167,15 +140,14 @@ export default function InternetFibre() {
       {/* VILLES */}
       <section className="py-12 bg-customblue2">
         <div className="container mx-auto px-6 grid lg:grid-cols-3 gap-8">
-          
-          {/* Colonne principale */}
+
           <div className="bg-white p-6 rounded-xl shadow lg:col-span-2">
             <h2 className="text-2xl font-semibold text-customblue">
               Villes desservies en Hauts-de-France
             </h2>
+
             <p className="text-gray-700 mt-2">
-              Sélectionnez votre ville pour la page locale dédiée à
-              <strong> Internet fibre & réseau d’entreprise</strong>.
+              Sélectionnez votre ville pour la page locale dédiée à <strong>Internet fibre & réseau</strong>.
             </p>
 
             <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -184,7 +156,6 @@ export default function InternetFibre() {
                   key={c.slug}
                   to={`/villes/${c.slug}/internet-fibre`}
                   className="inline-flex items-center justify-center h-11 px-4 text-sm rounded-full bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-800"
-                  aria-label={`Internet fibre & réseau à ${c.name}`}
                 >
                   Internet & Réseau à {c.name}
                 </Link>
@@ -198,7 +169,7 @@ export default function InternetFibre() {
             </div>
           </div>
 
-          {/* Colonne latérale */}
+          {/* Sidebar */}
           <aside className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-semibold text-customblue">Accès rapide</h3>
 
@@ -220,11 +191,11 @@ export default function InternetFibre() {
 
             <div className="mt-6 border-t border-gray-100 pt-6">
               <p className="text-sm text-gray-600">
-                IP fixe, redondance, Wi-Fi pro, sécurité réseau et supervision 24/7.
+                IP fixe, SD-WAN, Wi-Fi 6/7, sécurité réseau et supervision.
               </p>
               <Link
                 to="/contact"
-                className="mt-4 inline-flex justify-center w-full bg-customblue text-white px-4 py-2.5 rounded-md"
+                className="mt-4 inline-flex justify-center w-full bg-purple-600 text-white px-4 py-2.5 rounded-md"
               >
                 Obtenir une étude d’éligibilité
               </Link>
@@ -232,6 +203,7 @@ export default function InternetFibre() {
           </aside>
         </div>
       </section>
+
     </main>
   );
 }
